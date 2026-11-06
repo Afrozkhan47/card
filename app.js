@@ -46,10 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 2. Smooth Scroll Reveal (Intersection Observer)
+  // 2. Smooth Scroll Reveal (Intersection Observer — Stately, slow & premium reveal)
   const observerOptions = {
-    threshold: 0.08,
-    rootMargin: "0px 0px -20px 0px"
+    threshold: 0.14,
+    rootMargin: "0px 0px -50px 0px"
   };
 
   const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -386,21 +386,22 @@ function sendWhatsAppRSVP(e) {
   if (cleanDua.startsWith('"') && cleanDua.endsWith('"') && cleanDua.length > 1) {
     cleanDua = cleanDua.slice(1, -1).trim();
   }
-  const defaultDua = "Barakallahu lakuma wa baraka alaikuma wa jama'a bainakuma fee khair !!";
+  const defaultDua = "Barakallahu lakuma wa baraka alaikuma wa jama'a bainakuma fee khair 🤲";
   const dua = cleanDua || defaultDua;
 
   const messageLines = [
-    "WEDDING RSVP & BLESSINGS !!",
-    "Mahek & Aman's Wedding Ceremony",
+    "*WEDDING RSVP & BLESSINGS*",
+    "*Mahek & Aman's Wedding Ceremony*",
     "",
-    "Guest Details:",
-    `• Name: ${rawName}`,
-    `• Attendance: ${attendance}`,
-    `• Total Guests: ${count}`,
+    "*Guest Details:*",
+    `• *Name:* ${rawName}`,
+    `• *Attendance:* ${attendance}`,
+    `• *Total Guests:* ${count}`,
     "",
-    "Heartfelt Dua:",
-    `${dua}`,
+    "*Heartfelt Dua:*",
+    `"${dua}"`,
     "",
+    "— *Khan & Zarekari Families* · 27th Dec 2026"
   ];
 
   const fullText = messageLines.join('\n');

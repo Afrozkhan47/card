@@ -24,11 +24,34 @@
       background-size: 440px auto;
       background-attachment: fixed;
       background-position: center top;
-      color: var(--charcoal-warm);
+      color: #1a0f05;
       font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 500;
+      -webkit-font-smoothing: subpixel-antialiased;
+      -moz-osx-font-smoothing: auto;
+      text-rendering: optimizeLegibility;
       overflow-x: hidden;
       margin: 0;
       padding: 0;
+    }
+
+    /* Global Mobile Legibility & High-Contrast Typography */
+    .font-serif,
+    p.font-serif,
+    span.font-serif,
+    .font-body {
+      font-weight: 600;
+      color: #221305;
+    }
+
+    p, span, h1, h2, h3, h4, h5, h6, a, button, input, select, textarea {
+      text-rendering: optimizeLegibility;
+    }
+
+    [lang="ar"],
+    [dir="rtl"] {
+      font-family: 'Amiri Quran', 'Amiri', 'Scheherazade New', serif;
+      text-rendering: optimizeLegibility;
     }
 
     /* Ambient Continuous Royal Ivory & Arabesque Tapestry Container (Continuous Wedding BG) */
@@ -310,17 +333,18 @@
       background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.55), transparent);
     }
 
-    /* Scroll animations */
+    /* Scroll animations — Stately, slow, liquid-smooth parchment reveal */
     .reveal-on-scroll {
       opacity: 0;
-      transform: translateY(22px);
-      transition: all 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(30px) scale(0.985);
+      transition: opacity 1.35s cubic-bezier(0.22, 1, 0.36, 1), transform 1.45s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
     }
 
     .reveal-on-scroll.is-revealed,
     .hero-screen-viewport .reveal-on-scroll {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
     }
 
     /* Glowing Warm Gold Luxury Button */
@@ -371,23 +395,9 @@
       background: rgba(247, 237, 218, 0.95);
     }
 
-    /* Floating music button in bright cream & gold */
+    /* Floating music button permanently disabled per user request */
     .music-pill {
-      position: fixed;
-      top: 14px;
-      right: max(14px, calc(50% - 220px + 14px));
-      z-index: 50;
-      background: rgba(255, 253, 248, 0.94);
-      border: 1px solid rgba(184, 134, 11, 0.45);
-      backdrop-filter: blur(8px);
-      border-radius: 9999px;
-      padding: 4.5px 11px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 4px 18px rgba(184, 134, 11, 0.18);
-      cursor: pointer;
-      transition: all 0.3s ease;
+      display: none !important;
     }
 
     .audio-bar {
@@ -1270,16 +1280,17 @@
 .venue-street-line {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-style: italic;
-  font-size: 15.5px;
-  color: #2b1c0e;
+  font-weight: 600;
+  font-size: 16px;
+  color: #1a0d02;
   line-height: 1.45;
 }
 
 .venue-city-line {
   font-family: 'Cinzel', serif;
-  font-size: 11.5px;
-  font-weight: 700;
-  color: #382004;
+  font-size: 12px;
+  font-weight: 800;
+  color: #150902;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   margin-top: 5px;
@@ -1480,10 +1491,11 @@
 .card-header-sub {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-style: italic;
-  font-size: 11.5px;
-  color: #4a3828;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1c0e04;
   margin-top: 2px;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
 }
 
 /* Royal Compliments Folio Card (Honor Roll Chassis) */
@@ -1711,7 +1723,7 @@
   font-family: 'Cinzel', serif;
   font-size: clamp(12px, 3.3vw, 13.5px);
   font-weight: 700;
-  color: #381e05;
+  color: #150801;
   letter-spacing: 0.045em;
   line-height: 1.4;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.95);
@@ -1981,10 +1993,10 @@
 
 .elder-name-title {
   font-family: 'Cinzel', serif;
-  font-size: clamp(11px, 2.9vw, 15px);
+  font-size: clamp(11.5px, 3vw, 15.5px);
   font-weight: 700;
   letter-spacing: 0.04em;
-  color: #241403;
+  color: #150902;
   line-height: 1.35;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.95);
   white-space: nowrap;
@@ -1999,13 +2011,13 @@
   justify-content: center;
   gap: 8px;
   margin: 7px 0;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .cenotaph-line {
   width: 55px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.6), transparent);
+  height: 1.2px;
+  background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.75), transparent);
 }
 
 .cenotaph-rosette {
@@ -2018,10 +2030,10 @@
   align-items: center;
   gap: 6px;
   font-family: 'Cinzel', serif;
-  font-size: 9px;
+  font-size: 9.5px;
   font-weight: 800;
-  color: #8c6020;
-  letter-spacing: 0.26em;
+  color: #5c3505;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   margin-bottom: 6px;
   position: relative;
@@ -2031,8 +2043,9 @@
 .memory-subtitle {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 15px;
-  color: #633f0a;
+  font-weight: 600;
+  font-size: 16px;
+  color: #241405;
   letter-spacing: 0.04em;
   margin-bottom: 14px;
   position: relative;
@@ -2042,9 +2055,10 @@
 .memory-dua-prayer {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-style: italic;
-  font-size: 13.5px;
-  line-height: 1.55;
-  color: #3d2806;
+  font-weight: 600;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #180d03;
   max-width: 380px;
   margin: 0 auto;
   position: relative;
@@ -2531,9 +2545,9 @@
   font-family: 'Cormorant Garamond', 'Playfair Display', serif;
   font-size: 15px;
   font-style: italic;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.65;
-  color: #352309;
+  color: #1c0e04;
   max-width: 92%;
   margin: 0 auto 12px auto;
 }
@@ -2708,12 +2722,12 @@
 
 .rsvp-subtitle {
   font-family: 'Cinzel', serif;
-  font-size: 8.5px;
-  font-weight: 700;
+  font-size: 9px;
+  font-weight: 800;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #704d16;
-  opacity: 0.9;
+  color: #381e05;
+  opacity: 1;
   margin: 0;
 }
 
