@@ -10,6 +10,7 @@ Icon
 .chrome-tmp-v6/
 .tmp/
 .temp/
+.vercel/
 
 # Environment and sensitive keys
 .env
@@ -29,3 +30,4 @@ yarn-error.log*
 .idea/
 *.swp
 *.swo
+
