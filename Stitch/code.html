@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Mahek &amp; Aman — Royal Islamic Wedding Scroll</title>
+<!-- Google Fonts: Cormorant Garamond, Playfair Display, Cinzel, Great Vibes, Pinyon Script, Montserrat -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Great+Vibes&amp;family=Montserrat:wght@300;400;500;600&amp;family=Pinyon+Script&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    :root {
+      --cream-light: #fcf9f2;
+      --cream-base: #f7f1e5;
+      --cream-warm: #f0e6d2;
+      --gold-primary: #b8860b;
+      --gold-deep: #8a6414;
+      --gold-rich: #a07823;
+      --gold-glow: rgba(200, 155, 45, 0.28);
+      --charcoal-warm: #2c2217;
+      --bronze-dark: #3d3023;
+    }
+
+    * {
+      -webkit-tap-highlight-color: transparent;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f5ece0;
+      color: var(--charcoal-warm);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Ambient continuous bright royal ivory container */
+    .regal-scroll-container {
+      position: relative;
+      background: linear-gradient(180deg, #fdfbf7 0%, #f7f1e5 35%, #f4ebd9 70%, #fbf8f2 100%);
+      min-height: 100vh;
+      width: 100%;
+      max-width: 440px;
+      margin: 0 auto;
+      box-shadow: 0 0 45px rgba(184, 134, 11, 0.18), 0 0 100px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
+
+    /* Architectural Mihrab Artwork Background from Inspiration Image */
+    .bg-mihrab-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1100px;
+      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAZdUQwptCO1n_1ykU4bBPjjkxTvSIjHnC79Q_dPt0qFO-AVG2BJ6CJG8aE-5DOmPBaA53mXqfFkL70-HoJewYpcrWNBv_Z1_aQSCgL2xCJOtF68Au21KDrUMLnCo2rLflbx9F862MlLVjm0-Hoj3FGV5duLtXQ8ChwtPcCliooQhWyJp1x06oiNa-7F_nvRustRZkYeZQOu_mwSIoyg870DKeNg9Qiv2SRdr6mcTMMDzyv5dS9pLk0Eg');
+      background-size: 100% auto;
+      background-position: top center;
+      background-repeat: no-repeat;
+      opacity: 0.88;
+      pointer-events: none;
+      z-index: 1;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+    }
+
+    /* Subtle watermark arabesque texture overlay */
+    .bg-arabesque-layer {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 440px;
+      height: 100%;
+      background-image: radial-gradient(#d4af37 0.75px, transparent 0.75px), radial-gradient(#d4af37 0.75px, #fdfbf7 0.75px);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+      opacity: 0.06;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Floating golden sparkles */
+    .dust-particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 4;
+      overflow: hidden;
+    }
+
+    .dust-mote {
+      position: absolute;
+      width: 3.5px;
+      height: 3.5px;
+      background: radial-gradient(circle, #fff9de 10%, #d4af37 70%, rgba(212, 175, 55, 0) 100%);
+      border-radius: 50%;
+      box-shadow: 0 0 7px rgba(212, 175, 55, 0.8);
+      animation: floatMote linear infinite;
+    }
+
+    @keyframes floatMote {
+      0% {
+        transform: translateY(105vh) scale(0.6) rotate(0deg);
+        opacity: 0;
+      }
+      25% {
+        opacity: 0.9;
+      }
+      75% {
+        opacity: 0.75;
+      }
+      100% {
+        transform: translateY(-40px) scale(1.15) rotate(180deg);
+        opacity: 0;
+      }
+    }
+
+    /* Typography styles */
+    .font-script {
+      font-family: 'Great Vibes', cursive;
+    }
+
+    .font-pinyon {
+      font-family: 'Pinyon Script', cursive;
+    }
+
+    .font-cinzel {
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.16em;
+    }
+
+    .font-body {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .font-sans-luxury {
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.12em;
+    }
+
+    /* Rich Gold Foil Shimmer effect on typography */
+    .gold-foil-text {
+      background: linear-gradient(135deg, #7c5813 0%, #b8860b 28%, #dcb35a 50%, #946912 75%, #64440a 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: foilShine 8s ease-in-out infinite alternate;
+      display: inline-block;
+    }
+
+    @keyframes foilShine {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    /* Hanging Animated Lantern */
+    .lantern-chain {
+      transform-origin: top center;
+      animation: gentleSway 5.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes gentleSway {
+      0% { transform: rotate(-2.5deg); }
+      100% { transform: rotate(2.5deg); }
+    }
+
+    /* Hero Royal Arch Frame with Luminous Pearl-Glass */
+    .arch-frame {
+      border: 1px solid rgba(184, 134, 11, 0.42);
+      border-radius: 130px 130px 24px 24px;
+      position: relative;
+      background: linear-gradient(180deg, rgba(255, 253, 247, 0.94) 0%, rgba(251, 246, 235, 0.96) 100%);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 16px 38px rgba(184, 134, 11, 0.14), 0 4px 12px rgba(60, 40, 10, 0.05), inset 0 0 30px rgba(212, 175, 55, 0.1);
+    }
+
+    .arch-frame::before {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border: 1px dashed rgba(184, 134, 11, 0.32);
+      border-radius: 124px 124px 18px 18px;
+      pointer-events: none;
+    }
+
+    /* Frosted Ivory & Gold Inlaid Panel */
+    .inlaid-panel {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.92) 0%, rgba(251, 245, 233, 0.95) 100%);
+      border: 1px solid rgba(184, 134, 11, 0.32);
+      border-radius: 18px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 28px rgba(160, 120, 35, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+      position: relative;
+    }
+
+    /* Section Divider Ornament */
+    .divider-gold {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 1.6rem 0;
+      opacity: 0.9;
+    }
+
+    .divider-line {
+      height: 1px;
+      flex-grow: 1;
+      background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.55), transparent);
+    }
+
+    /* Scroll animations */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: all 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-on-scroll.is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Glowing Warm Gold Luxury Button */
+    .btn-gold-luxury {
+      background: linear-gradient(135deg, #d4af37 0%, #b8860b 50%, #996e12 100%);
+      color: #ffffff;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.15em;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 5px 20px rgba(184, 134, 11, 0.32);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 238, 179, 0.7);
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-gold-luxury:active {
+      transform: scale(0.97);
+      box-shadow: 0 2px 10px rgba(184, 134, 11, 0.22);
+    }
+
+    .btn-glass-gold {
+      background: rgba(255, 255, 255, 0.85);
+      color: var(--gold-deep);
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.14em;
+      font-weight: 600;
+      font-size: 0.7rem;
+      padding: 10px 20px;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border: 1px solid rgba(184, 134, 11, 0.38);
+      box-shadow: 0 3px 12px rgba(184, 134, 11, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .btn-glass-gold:active {
+      background: rgba(247, 237, 218, 0.95);
+    }
+
+    /* Floating music button in bright cream & gold */
+    .music-pill {
+      position: fixed;
+      top: 14px;
+      right: 14px;
+      z-index: 50;
+      background: rgba(255, 253, 248, 0.92);
+      border: 1px solid rgba(184, 134, 11, 0.45);
+      backdrop-filter: blur(8px);
+      border-radius: 9999px;
+      padding: 6px 13px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      box-shadow: 0 4px 18px rgba(184, 134, 11, 0.18);
+      cursor: pointer;
+    }
+
+    .audio-bar {
+      width: 2.5px;
+      background: #b8860b;
+      border-radius: 2px;
+      animation: soundwave 1.2s ease-in-out infinite alternate;
+    }
+
+    .audio-bar:nth-child(2) { height: 12px; animation-delay: 0.2s; }
+    .audio-bar:nth-child(3) { height: 8px; animation-delay: 0.4s; }
+    .audio-bar:nth-child(4) { height: 14px; animation-delay: 0.1s; }
+
+    @keyframes soundwave {
+      0% { height: 4px; }
+      100% { height: 15px; }
+    }
+
+    /* Countdown digits */
+    .countdown-tile {
+      background: linear-gradient(180deg, #ffffff 0%, #f9f4ea 100%);
+      border: 1px solid rgba(184, 134, 11, 0.32);
+      border-radius: 12px;
+      padding: 9px 4px;
+      box-shadow: 0 3px 10px rgba(184, 134, 11, 0.08), inset 0 1px 0 #ffffff;
+    }
+
+    /* Custom Form Fields */
+    .luxury-input {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(184, 134, 11, 0.35);
+      border-radius: 8px;
+      color: #2c2217;
+      padding: 10px 14px;
+      font-size: 0.95rem;
+      width: 100%;
+      outline: none;
+      transition: all 0.3s ease;
+      font-family: 'Cormorant Garamond', serif;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.03);
+    }
+
+    .luxury-input:focus {
+      border-color: #b8860b;
+      box-shadow: 0 0 10px rgba(184, 134, 11, 0.22);
+      background: #ffffff;
+    }
+
+    .luxury-input::placeholder {
+      color: rgba(60, 48, 35, 0.45);
+    }
+  </style>
+</head>
+<body class="selection:bg-amber-200 selection:text-amber-900">
+<!-- Mobile Luxury Frame -->
+<div class="regal-scroll-container pb-20">
+<!-- Fixed Floating Music Controller -->
+<div class="music-pill" id="musicToggle">
+<div class="flex items-end gap-1 h-4">
+<div class="audio-bar" style="height: 6px;"></div>
+<div class="audio-bar"></div>
+<div class="audio-bar"></div>
+<div class="audio-bar"></div>
+</div>
+<span class="text-[10px] font-cinzel text-amber-900 tracking-wider font-bold">PLAY SUFI TUNE</span>
+</div>
+<!-- Hidden audio element with royal wedding shehnai / sufi melody ambience -->
+<audio id="weddingAudio" loop="" preload="none">
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2452c93816.mp3" type="audio/mpeg"/>
+</audio>
+<!-- Visual Backdrop Inspired by Image 8 -->
+<div class="bg-mihrab-layer"></div>
+<!-- Subtle Texture Overlay -->
+<div class="bg-arabesque-layer"></div>
+<!-- Dynamic Canvas Particle Container -->
+<div class="dust-particles" id="dustContainer"></div>
+<!-- Top Hanging Fanous Lanterns Illustration -->
+<div class="relative w-full pt-4 flex justify-around px-8 z-10 pointer-events-none">
+<!-- Left Lantern -->
+<div class="lantern-chain flex flex-col items-center opacity-90" style="animation-delay: -1.5s;">
+<div class="w-[1px] h-14 bg-gradient-to-b from-amber-600/20 via-amber-600/60 to-amber-600"></div>
+<svg class="w-7 h-10 text-amber-600 drop-shadow-[0_2px_10px_rgba(212,175,55,0.6)]" fill="currentColor" viewbox="0 0 24 36">
+<circle cx="12" cy="3" fill="#b8860b" r="2"></circle>
+<path d="M7 6h10l-2 5H9L7 6z" fill="#b8860b"></path>
+<path d="M6 11h12l2 10H4L6 11z" fill="url(#lanternGlowCream)" stroke="#b8860b" stroke-width="0.8"></path>
+<path d="M4 21h16l-3 7H7l-3-7z" fill="#8a6414"></path>
+<circle cx="12" cy="31" fill="#d4af37" r="1.5"></circle>
+<defs>
+<lineargradient id="lanternGlowCream" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#ffffff"></stop>
+<stop offset="60%" stop-color="#f5d77f"></stop>
+<stop offset="100%" stop-color="#c69214"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+<!-- Center Royal Dome Minaret Crest -->
+<div class="pt-2 flex flex-col items-center opacity-95">
+<svg class="w-8 h-8 text-amber-700 drop-shadow-[0_2px_8px_rgba(184,134,11,0.45)]" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2C10.5 4 8 6.5 8 9.5C8 11.5 9.5 13 12 14C14.5 13 16 11.5 16 9.5C16 6.5 13.5 4 12 2Z"></path>
+<path d="M6 15H18V17C18 17.5 17.5 18 17 18H7C6.5 18 6 17.5 6 17V15Z"></path>
+<path d="M4 19H20V21H4V19Z"></path>
+</svg>
+</div>
+<!-- Right Lantern -->
+<div class="lantern-chain flex flex-col items-center opacity-90" style="animation-delay: -3.5s;">
+<div class="w-[1px] h-10 bg-gradient-to-b from-amber-600/20 via-amber-600/60 to-amber-600"></div>
+<svg class="w-6 h-9 text-amber-600 drop-shadow-[0_2px_10px_rgba(212,175,55,0.6)]" fill="currentColor" viewbox="0 0 24 36">
+<circle cx="12" cy="3" fill="#b8860b" r="2"></circle>
+<path d="M7 6h10l-2 5H9L7 6z" fill="#b8860b"></path>
+<path d="M6 11h12l2 10H4L6 11z" fill="url(#lanternGlowCream)" stroke="#b8860b" stroke-width="0.8"></path>
+<path d="M4 21h16l-3 7H7l-3-7z" fill="#8a6414"></path>
+<circle cx="12" cy="31" fill="#d4af37" r="1.5"></circle>
+</svg>
+</div>
+</div>
+<!-- ==================== HERO SECTION : ROYAL ARCH ==================== -->
+<div class="relative z-10 px-4 mt-2">
+<div class="arch-frame p-6 pt-9 text-center reveal-on-scroll">
+<!-- Bismillah Calligraphy in Regal Antique Gold -->
+<div class="flex justify-center mb-2">
+<svg class="w-52 h-14 text-amber-800 drop-shadow-[0_1px_4px_rgba(184,134,11,0.35)]" fill="currentColor" viewbox="0 0 320 80">
+<!-- Stylized Bismillah SVG Mark -->
+<path d="M160,25 C145,20 130,22 115,28 C110,25 105,24 100,26 C95,22 88,23 80,27 C75,32 72,40 76,46 C80,52 89,52 94,48 C98,54 106,56 112,51 C122,58 138,57 148,50 C155,55 166,55 174,49 C182,56 198,56 208,49 C215,55 226,53 232,46 C238,52 248,50 252,43 C256,36 250,29 242,27 C234,25 225,28 219,34 C213,28 202,26 193,31 C184,24 171,22 160,25 Z M102,34 C104,34 106,36 106,38 C106,40 104,42 102,42 C100,42 98,40 98,38 C98,36 100,34 102,34 Z M162,33 C164,33 166,35 166,37 C166,39 164,41 162,41 C160,41 158,39 158,37 C158,35 160,33 162,33 Z M220,33 C222,33 224,35 224,37 C224,39 222,41 220,41 C218,41 216,39 216,37 C216,35 218,33 220,33 Z"></path>
+</svg>
+</div>
+<!-- Translated Bismillah invocation -->
+<p class="text-xs uppercase tracking-[0.25em] text-amber-900/80 font-cinzel italic mb-3 font-semibold">
+          In the name of Allah, the most beneficent &amp; merciful
+        </p>
+<!-- Hadith Arabic Calligraphy Badge -->
+<div class="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-500/10 border border-amber-600/30 rounded-full mb-2">
+<span class="text-amber-700 text-xs">✦</span>
+<span class="font-serif text-base tracking-wider text-amber-950 font-bold">النكاح من سنتي</span>
+<span class="text-amber-700 text-xs">✦</span>
+</div>
+<p class="text-[11px] text-amber-800/90 tracking-widest uppercase font-cinzel mb-4 font-semibold">
+          "Marriage is part of my Sunnah"
+        </p>
+<!-- Floral Arabesque Ornament -->
+<div class="divider-gold my-2">
+<div class="divider-line"></div>
+<span class="text-amber-700 text-xs">❖ ❦ ❖</span>
+<div class="divider-line"></div>
+</div>
+<!-- Host Lineage (Verbatim from Invitation Image) -->
+<div class="text-center my-4 space-y-1">
+<p class="font-cinzel text-xs font-bold text-[#2c2217] tracking-wider leading-relaxed">
+            MR. HAJI HAMID KHAN ABDUL KHAN PATHAN
+            <span class="text-[11px] text-amber-800 font-sans-luxury font-medium block sm:inline">, MOHOL</span>
+</p>
+<p class="font-cinzel text-xs font-bold text-[#2c2217] tracking-wider leading-relaxed">
+            MR. YUNUS KHAN ABDUL KHAN PATHAN
+            <span class="text-[11px] text-amber-800 font-sans-luxury font-medium block sm:inline">, TELECOM SOLAPUR</span>
+</p>
+<p class="text-xs italic text-[#4a3b2c] pt-2 font-body font-medium">
+            Solicit your gracious presence on the auspicious occasion of the Wedding Ceremony of their beloved
+          </p>
+</div>
+<!-- BRIDE NAME -->
+<div class="mt-4 mb-2">
+<h1 class="font-script text-6xl text-amber-800 leading-tight drop-shadow-[0_2px_12px_rgba(184,134,11,0.25)] gold-foil-text py-1">
+            Mahek
+          </h1>
+<p class="text-xs text-[#2c2217] font-cinzel font-semibold tracking-wider mt-1">
+            (Grand D/o. Late Haji Amir Abdul Khan)
+          </p>
+<p class="text-[11px] text-amber-800 font-cinzel font-semibold tracking-wider">
+            (D/o. Firoj Amir Khan)
+          </p>
+</div>
+<!-- WITH Badge -->
+<div class="my-3 flex items-center justify-center gap-3">
+<div class="w-10 h-[1px] bg-amber-700/35"></div>
+<span class="font-script text-2xl text-amber-800 italic px-2">With</span>
+<div class="w-10 h-[1px] bg-amber-700/35"></div>
+</div>
+<!-- GROOM NAME -->
+<div class="mb-4">
+<h2 class="font-script text-6xl text-amber-800 leading-tight drop-shadow-[0_2px_12px_rgba(184,134,11,0.25)] gold-foil-text py-1">
+            Aman
+          </h2>
+<p class="text-xs text-[#2c2217] font-cinzel font-semibold tracking-wider mt-1">
+            (S/o. Kadir Abbas Zarekari, Baramati)
+          </p>
+</div>
+<!-- Royal Event Sub-Title -->
+<div class="pt-3 pb-1 border-t border-amber-600/25">
+<p class="font-cinzel text-xs tracking-[0.25em] text-amber-900 font-bold uppercase">
+            Khan &amp; Zarekari Wedding Ceremony
+          </p>
+</div>
+<!-- Quick Jump Buttons in Hero -->
+<div class="flex items-center justify-center gap-3 mt-4">
+<a class="btn-gold-luxury text-[10px] py-2 px-4 shadow-md" href="#itinerarySection">
+<span>📅</span> Program
+          </a>
+<a class="btn-glass-gold text-[10px] py-2 px-4" href="#venueSection">
+<span>📍</span> Location
+          </a>
+</div>
+</div>
+</div>
+<!-- ==================== DATE & HIJRI BANNER ==================== -->
+<div class="relative z-10 px-5 mt-8">
+<div class="inlaid-panel p-5 text-center reveal-on-scroll">
+<div class="inline-flex items-center gap-2 mb-2">
+<span class="text-amber-600 text-xs">✦</span>
+<span class="font-cinzel text-[11px] font-bold tracking-[0.22em] text-amber-900 uppercase">INSHA ALLAH NIKAH</span>
+<span class="text-amber-600 text-xs">✦</span>
+</div>
+<p class="font-cinzel text-xs text-amber-800/90 tracking-widest uppercase mb-3 font-semibold">Sunday</p>
+<!-- Big Calendar Date Pill -->
+<div class="flex items-center justify-center gap-3 my-2">
+<div class="text-center px-4 py-2 bg-amber-50/70 border border-amber-600/35 rounded-xl shadow-sm">
+<span class="font-cinzel text-3xl font-bold text-amber-900 leading-none">27</span>
+<span class="block text-[9px] font-sans-luxury text-amber-800 uppercase tracking-widest mt-1 font-semibold">DATE</span>
+</div>
+<span class="text-2xl text-amber-600 font-serif font-bold">·</span>
+<div class="text-center px-4 py-2 bg-amber-50/70 border border-amber-600/35 rounded-xl shadow-sm">
+<span class="font-cinzel text-3xl font-bold text-amber-900 leading-none">12</span>
+<span class="block text-[9px] font-sans-luxury text-amber-800 uppercase tracking-widest mt-1 font-semibold">MONTH</span>
+</div>
+<span class="text-2xl text-amber-600 font-serif font-bold">·</span>
+<div class="text-center px-4 py-2 bg-amber-50/70 border border-amber-600/35 rounded-xl shadow-sm">
+<span class="font-cinzel text-3xl font-bold text-amber-900 leading-none">26</span>
+<span class="block text-[9px] font-sans-luxury text-amber-800 uppercase tracking-widest mt-1 font-semibold">YEAR</span>
+</div>
+</div>
+<p class="font-cinzel text-sm font-bold text-amber-950 tracking-widest uppercase mt-3">
+          DECEMBER 2026
+        </p>
+<!-- Hijri and Time Details -->
+<div class="mt-3 pt-3 border-t border-amber-600/25 flex items-center justify-center gap-4 text-xs">
+<span class="text-amber-900 italic font-body text-sm font-semibold">
+            🌙 17th Rajjab 1448 Hijri
+          </span>
+<span class="text-amber-500">|</span>
+<span class="font-cinzel text-amber-900 font-bold tracking-wider text-xs">
+            ⏰ at 11:30 AM
+          </span>
+</div>
+<!-- Add to Google Calendar Button -->
+<div class="mt-4">
+<a class="btn-glass-gold w-full text-center text-[10px] py-2.5" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Mahek+%26+Aman+-+Royal+Islamic+Wedding+Ceremony&amp;dates=20261227T060000Z/20261227T100000Z&amp;details=Khan+%26+Zarekari+Wedding+Ceremony.+Insha+Allah+Nikah+at+11%3A30+AM+followed+by+Lunch+Reception.&amp;location=Govind+Garden%2C+Opp.+Gawli+Farm%2C+Bhosari-Alandi+Road%2C+Dighi%2C+Pune" target="_blank">
+<svg class="w-3.5 h-3.5 mr-1 text-amber-700 inline" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+            SAVE DATE TO GOOGLE CALENDAR
+          </a>
+</div>
+</div>
+</div>
+<!-- ==================== LIVE BLESSED COUNTDOWN ==================== -->
+<div class="relative z-10 px-5 mt-7">
+<div class="text-center mb-3">
+<p class="font-cinzel text-[11px] font-bold text-amber-900 tracking-[0.2em] uppercase">
+          ⏳ COUNTING THE BLESSED MOMENTS ⏳
+        </p>
+</div>
+<div class="grid grid-cols-4 gap-2.5 text-center reveal-on-scroll">
+<div class="countdown-tile">
+<span class="font-cinzel text-xl font-bold text-amber-950" id="daysCount">67</span>
+<span class="block text-[8px] font-sans-luxury text-amber-800 tracking-widest uppercase mt-0.5 font-semibold">DAYS</span>
+</div>
+<div class="countdown-tile">
+<span class="font-cinzel text-xl font-bold text-amber-950" id="hoursCount">18</span>
+<span class="block text-[8px] font-sans-luxury text-amber-800 tracking-widest uppercase mt-0.5 font-semibold">HOURS</span>
+</div>
+<div class="countdown-tile">
+<span class="font-cinzel text-xl font-bold text-amber-950" id="minsCount">42</span>
+<span class="block text-[8px] font-sans-luxury text-amber-800 tracking-widest uppercase mt-0.5 font-semibold">MINS</span>
+</div>
+<div class="countdown-tile">
+<span class="font-cinzel text-xl font-bold text-amber-700 animate-pulse" id="secsCount">20</span>
+<span class="block text-[8px] font-sans-luxury text-amber-800 tracking-widest uppercase mt-0.5 font-semibold">SECS</span>
+</div>
+</div>
+</div>
+<!-- ==================== WEDDING ITINERARY ==================== -->
+<div class="relative z-10 px-5 mt-10" id="itinerarySection">
+<!-- Section Title Header -->
+<div class="text-center mb-6 reveal-on-scroll">
+<div class="text-amber-600 text-lg mb-1">🌙</div>
+<h3 class="font-cinzel text-xl font-bold tracking-[0.22em] text-amber-950 uppercase">
+          WEDDING ITINERARY
+        </h3>
+<p class="text-xs italic text-amber-800/80 font-body font-medium">Sacred Ceremonies &amp; Celebrations</p>
+</div>
+<!-- Flowing Timeline Sequence -->
+<div class="space-y-4">
+<!-- Item 1: Solemnization -->
+<div class="inlaid-panel p-4 reveal-on-scroll flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-600/35 flex-shrink-0 flex items-center justify-center text-amber-700 text-xl shadow-inner">
+            💍
+          </div>
+<div class="flex-grow">
+<div class="flex items-center justify-between">
+<span class="text-[9px] font-sans-luxury text-amber-800 uppercase tracking-widest font-semibold">SOLEMNIZATION</span>
+<span class="text-xs font-cinzel font-bold text-amber-900 bg-amber-500/15 px-2.5 py-0.5 rounded-full border border-amber-600/30">11:30 AM</span>
+</div>
+<h4 class="font-cinzel text-base font-bold text-amber-950 mt-1">NIKAH CEREMONY</h4>
+<p class="text-xs italic text-amber-800 font-serif font-semibold mt-1">Insha Allah Nikah at 11:30 AM</p>
+<p class="text-xs text-[#4a3b2c] font-body mt-1 leading-relaxed">
+              Witness the sacred contract of marriage and unite in prayers as Mahek and Aman exchange marital vows in accordance with the holy Sunnah.
+            </p>
+</div>
+</div>
+<!-- Item 2: Dawat / Lunch -->
+<div class="inlaid-panel p-4 reveal-on-scroll flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-600/35 flex-shrink-0 flex items-center justify-center text-amber-700 text-xl shadow-inner">
+            🍽️
+          </div>
+<div class="flex-grow">
+<div class="flex items-center justify-between">
+<span class="text-[9px] font-sans-luxury text-amber-800 uppercase tracking-widest font-semibold">HOSPITALITY &amp; DAWAT</span>
+<span class="text-xs font-cinzel font-bold text-amber-900 bg-amber-500/15 px-2.5 py-0.5 rounded-full border border-amber-600/30">AFTER NIKAH</span>
+</div>
+<h4 class="font-cinzel text-base font-bold text-amber-950 mt-1">LUNCH RECEPTION</h4>
+<p class="text-xs italic text-amber-800 font-serif font-semibold mt-1">Lunch Immediately After Nikah</p>
+<p class="text-xs text-[#4a3b2c] font-body mt-1 leading-relaxed">
+              Join the Khan &amp; Zarekari families to partake in traditional culinary delicacies and share warm blessings with the newly wedded couple.
+            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- ==================== VENUE & DIRECTIONS ==================== -->
+<div class="relative z-10 px-5 mt-10" id="venueSection">
+<div class="inlaid-panel p-5 text-center reveal-on-scroll">
+<!-- Mihrab Crest Tag -->
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-amber-500/15 border border-amber-600/30 rounded-full mb-3">
+<span class="text-amber-700 text-xs">◆</span>
+<span class="font-cinzel text-[10px] font-bold tracking-[0.2em] text-amber-900 uppercase">NIKAH AT VENUE</span>
+<span class="text-amber-700 text-xs">◆</span>
+</div>
+<h3 class="font-cinzel text-2xl font-bold text-amber-950 tracking-wide mt-1">
+          GOVIND GARDEN
+        </h3>
+<p class="text-sm italic text-[#4a3b2c] font-body mt-1">
+          Opp. Gawli Farm, Bhosari-Alandi Road,
+        </p>
+<p class="font-cinzel text-sm font-bold text-amber-900 tracking-wider mt-0.5">
+          DIGHI, PUNE
+        </p>
+<!-- Decorative filigree divider -->
+<div class="divider-gold my-3">
+<div class="divider-line"></div>
+<span class="text-amber-700 text-xs">⚜</span>
+<div class="divider-line"></div>
+</div>
+<!-- Venue Navigation Actions -->
+<div class="space-y-2 mt-4">
+<a class="btn-gold-luxury w-full text-center" href="https://maps.google.com/?q=Govind+Garden+Opp+Gawli+Farm+Bhosari+Alandi+Road+Dighi+Pune" target="_blank">
+<svg class="w-4 h-4 mr-1 text-white" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" fill-rule="evenodd"></path>
+</svg>
+            OPEN IN GOOGLE MAPS
+          </a>
+<button class="btn-glass-gold w-full text-center text-[10px] py-2.5" onclick="copyVenueAddress()">
+<svg class="w-3.5 h-3.5 mr-1 text-amber-700 inline" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span id="copyBtnLabel">COPY VENUE ADDRESS</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ==================== WITH BEST COMPLIMENTS FROM (HONOR ROLL) ==================== -->
+<div class="relative z-10 px-5 mt-10">
+<div class="text-center mb-5 reveal-on-scroll">
+<span class="text-[9px] font-sans-luxury text-amber-800 uppercase tracking-[0.25em] block mb-1 font-bold">HONOR ROLL</span>
+<h3 class="font-script text-3xl text-amber-800 gold-foil-text leading-tight">
+          With Best Compliments From
+        </h3>
+<div class="flex items-center justify-center gap-2 mt-1">
+<span class="text-amber-600 text-xs">〜</span>
+<span class="text-amber-700 text-xs">🌙</span>
+<span class="text-amber-600 text-xs">〜</span>
+</div>
+</div>
+<!-- Verbatim Compliments List in Royal Dual-Tone Cream Badges -->
+<div class="space-y-2 reveal-on-scroll">
+<!-- Row 1 -->
+<div class="flex items-center justify-between p-2.5 px-3 bg-white/80 border border-amber-600/25 rounded-lg text-xs shadow-sm">
+<span class="font-cinzel text-[#2c2217] font-semibold">Haji Noor Ahmed Hussain Shaikh</span>
+<span class="text-[9px] font-sans-luxury text-amber-900 bg-amber-500/15 px-2 py-0.5 rounded border border-amber-600/25 font-bold">SOLAPUR</span>
+</div>
+<!-- Row 2 -->
+<div class="flex items-center justify-between p-2.5 px-3 bg-white/80 border border-amber-600/25 rounded-lg text-xs shadow-sm">
+<span class="font-cinzel text-[#2c2217] font-semibold">Haji Ayyub Abdul Rahman Sayyed</span>
+<span class="text-[9px] font-sans-luxury text-amber-900 bg-amber-500/15 px-2 py-0.5 rounded border border-amber-600/25 font-bold">BARSHI</span>
+</div>
+<!-- Row 3 -->
+<div class="flex items-center justify-between p-2.5 px-3 bg-white/80 border border-amber-600/25 rounded-lg text-xs shadow-sm">
+<span class="font-cinzel text-[#2c2217] font-semibold">Raof Hussain Shaikh (RK)</span>
+<span class="text-[9px] font-sans-luxury text-amber-900 bg-amber-500/15 px-2 py-0.5 rounded border border-amber-600/25 font-bold">PUNE</span>
+</div>
+<!-- Row 4 -->
+<div class="flex items-center justify-between p-2.5 px-3 bg-white/80 border border-amber-600/25 rounded-lg text-xs shadow-sm">
+<span class="font-cinzel text-[#2c2217] font-semibold">Rashid Hussain Shaikh</span>
+<span class="text-[9px] font-sans-luxury text-amber-900 bg-amber-500/15 px-2 py-0.5 rounded border border-amber-600/25 font-bold">PUNE</span>
+</div>
+<!-- Row 5 -->
+<div class="flex items-center justify-between p-2.5 px-3 bg-white/80 border border-amber-600/25 rounded-lg text-xs shadow-sm">
+<span class="font-cinzel text-[#2c2217] font-semibold">Javed Akhtar Mahboob Saheb Sayyed</span>
+<span class="text-[9px] font-sans-luxury text-amber-900 bg-amber-500/15 px-2 py-0.5 rounded border border-amber-600/25 font-bold">SOLAPUR</span>
+</div>
+<!-- Row 6 -->
+<div class="flex items-center justify-between p-2.5 px-3 bg-white/80 border border-amber-600/25 rounded-lg text-xs shadow-sm">
+<span class="font-cinzel text-[#2c2217] font-semibold">Shahnawaz Noor Ahmed Shaikh</span>
+<span class="text-[9px] font-sans-luxury text-amber-900 bg-amber-500/15 px-2 py-0.5 rounded border border-amber-600/25 font-bold">SOLAPUR</span>
+</div>
+<!-- Row 7 -->
+<div class="flex items-center justify-between p-2.5 px-3 bg-white/80 border border-amber-600/25 rounded-lg text-xs shadow-sm">
+<span class="font-cinzel text-[#2c2217] font-semibold">Haji Sarfaraz Amir Khan</span>
+<span class="text-[9px] font-sans-luxury text-amber-900 bg-amber-500/15 px-2 py-0.5 rounded border border-amber-600/25 font-bold">PUNE</span>
+</div>
+<!-- Row 8 -->
+<div class="flex items-center justify-between p-2.5 px-3 bg-white/80 border border-amber-600/25 rounded-lg text-xs shadow-sm">
+<span class="font-cinzel text-[#2c2217] font-semibold">Mohsin Ayyub Sayyed</span>
+<span class="text-[9px] font-sans-luxury text-amber-900 bg-amber-500/15 px-2 py-0.5 rounded border border-amber-600/25 font-bold">BARSHI</span>
+</div>
+<!-- Row 9 -->
+<div class="flex items-center justify-between p-2.5 px-3 bg-white/80 border border-amber-600/25 rounded-lg text-xs shadow-sm">
+<span class="font-cinzel text-[#2c2217] font-semibold">Moin Ayyub Sayyed</span>
+<span class="text-[9px] font-sans-luxury text-amber-900 bg-amber-500/15 px-2 py-0.5 rounded border border-amber-600/25 font-bold">BARSHI</span>
+</div>
+<!-- Row 10 -->
+<div class="flex items-center justify-between p-2.5 px-3 bg-white/80 border border-amber-600/25 rounded-lg text-xs shadow-sm">
+<span class="font-cinzel text-[#2c2217] font-semibold">Sohail Ayyub Sayyed</span>
+<span class="text-[9px] font-sans-luxury text-amber-900 bg-amber-500/15 px-2 py-0.5 rounded border border-amber-600/25 font-bold">BARSHI</span>
+</div>
+<!-- Row 11 -->
+<div class="flex items-center justify-between p-2.5 px-3 bg-white/80 border border-amber-600/25 rounded-lg text-xs shadow-sm">
+<span class="font-cinzel text-[#2c2217] font-semibold">Noor Khan Hamid Khan Pathan</span>
+<span class="text-[9px] font-sans-luxury text-amber-900 bg-amber-500/15 px-2 py-0.5 rounded border border-amber-600/25 font-bold">MOHOL</span>
+</div>
+<!-- Row 12 -->
+<div class="flex items-center justify-between p-2.5 px-3 bg-white/80 border border-amber-600/25 rounded-lg text-xs shadow-sm">
+<span class="font-cinzel text-[#2c2217] font-semibold">Abul Faiz Khan Yunus Khan Pathan</span>
+<span class="text-[9px] font-sans-luxury text-amber-900 bg-amber-500/15 px-2 py-0.5 rounded border border-amber-600/25 font-bold">SOLAPUR</span>
+</div>
+</div>
+<!-- Grand Footer Signature -->
+<div class="text-center my-6">
+<h4 class="font-script text-4xl text-amber-800 gold-foil-text">
+          All Relatives &amp; Friends
+        </h4>
+</div>
+</div>
+<!-- ==================== DUA & BLESSINGS RSVP ==================== -->
+<div class="relative z-10 px-5 mt-4">
+<div class="inlaid-panel p-5 reveal-on-scroll">
+<div class="text-center mb-4">
+<span class="text-[9px] font-sans-luxury text-amber-800 uppercase tracking-[0.22em] block mb-1 font-bold">DUA &amp; BLESSINGS</span>
+<h3 class="font-cinzel text-xl font-bold text-amber-950">
+            SEND YOUR BLESSINGS &amp; RSVP
+          </h3>
+<p class="text-xs italic text-[#4a3b2c] font-body mt-1">
+            Your presence and prayers are the greatest gift for Mahek &amp; Aman
+          </p>
+</div>
+<form class="space-y-3.5" id="rsvpForm" onsubmit="sendWhatsAppRSVP(event)">
+<div>
+<label class="block text-[10px] font-sans-luxury text-amber-900 uppercase tracking-wider mb-1 font-semibold">YOUR FULL NAME</label>
+<input class="luxury-input" id="guestName" placeholder="e.g. Javed Sayyed" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block text-[10px] font-sans-luxury text-amber-900 uppercase tracking-wider mb-1 font-semibold">WILL YOU ATTEND?</label>
+<select class="luxury-input text-xs font-serif" id="attendance">
+<option value="Yes, with family (Insha Allah)">Yes, with family</option>
+<option value="Yes, attending solo">Yes, attending solo</option>
+<option value="Sending prayers &amp; blessings from afar">Sending prayers</option>
+</select>
+</div>
+<div>
+<label class="block text-[10px] font-sans-luxury text-amber-900 uppercase tracking-wider mb-1 font-semibold">TOTAL GUESTS</label>
+<input class="luxury-input" id="guestCount" max="15" min="1" type="number" value="2"/>
+</div>
+</div>
+<div>
+<label class="block text-[10px] font-sans-luxury text-amber-900 uppercase tracking-wider mb-1 font-semibold">YOUR DUA / MESSAGE FOR THE COUPLE</label>
+<textarea class="luxury-input" id="duaMessage" placeholder="Barakallahu lakuma wa baraka alaikuma..." rows="2"></textarea>
+</div>
+<button class="btn-gold-luxury w-full mt-2 py-3" type="submit">
+<svg class="w-4 h-4 mr-1 text-white inline" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.043.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824z"></path>
+</svg>
+            SEND WISHES VIA WHATSAPP
+          </button>
+</form>
+</div>
+</div>
+<!-- ==================== CORDIALLY INVITED BY & FIRM DETAILS ==================== -->
+<div class="relative z-10 px-5 mt-10">
+<div class="inlaid-panel p-5 text-center reveal-on-scroll">
+<span class="text-[9px] font-sans-luxury text-amber-800 uppercase tracking-[0.25em] block mb-1 font-bold">CORDIALLY INVITED BY</span>
+<h3 class="font-cinzel text-xl font-bold text-amber-950 mt-1">
+          FIROJ AMIR KHAN
+        </h3>
+<p class="text-xs italic text-[#4a3b2c] font-body mt-1">
+          Near Sai Hospital, Survey No. 74, Adarsh Nagar, Dighi, Pune-15.
+        </p>
+<div class="divider-gold my-4">
+<div class="divider-line"></div>
+<span class="text-amber-700 text-xs">✦ ✦ ✦</span>
+<div class="divider-line"></div>
+</div>
+<span class="text-[9px] font-sans-luxury text-amber-800 uppercase tracking-[0.25em] block mb-1 font-bold">FIRM</span>
+<h4 class="font-cinzel text-sm font-bold text-amber-950">
+          SKYLINE PAN SHOP &amp; MOBILE REPAIRING
+        </h4>
+<p class="text-xs text-amber-800 font-cinzel font-semibold tracking-wider mt-0.5">DIGHI, PUNE</p>
+<!-- Contact Calling Action Badges -->
+<div class="space-y-2 mt-4">
+<a class="flex items-center justify-between p-2.5 px-3 bg-white/90 border border-amber-600/30 rounded-lg text-xs text-[#2c2217] shadow-sm active:bg-amber-100/60" href="tel:8788148687">
+<span class="font-cinzel font-semibold">Rahim Bhai Shaikh</span>
+<span class="font-mono text-amber-900 flex items-center gap-1 font-bold">
+              📞 8788148687
+            </span>
+</a>
+<a class="flex items-center justify-between p-2.5 px-3 bg-white/90 border border-amber-600/30 rounded-lg text-xs text-[#2c2217] shadow-sm active:bg-amber-100/60" href="tel:9529712193">
+<span class="font-cinzel font-semibold">Afroz Khan</span>
+<span class="font-mono text-amber-900 flex items-center gap-1 font-bold">
+              📞 9529712193
+            </span>
+</a>
+<a class="flex items-center justify-between p-2.5 px-3 bg-white/90 border border-amber-600/30 rounded-lg text-xs text-[#2c2217] shadow-sm active:bg-amber-100/60" href="tel:8999743026">
+<span class="font-cinzel font-semibold">Abdul Malik Khan</span>
+<span class="font-mono text-amber-900 flex items-center gap-1 font-bold">
+              📞 8999743026
+            </span>
+</a>
+</div>
+</div>
+</div>
+<!-- ==================== BOTTOM PRINTER CREDITS & CLOSING ==================== -->
+<div class="relative z-10 px-5 mt-10 text-center reveal-on-scroll">
+<p class="text-[9px] font-sans-luxury text-amber-900/70 uppercase tracking-[0.25em] font-semibold">
+        Amar Press, Solapur.
+      </p>
+<p class="text-[10px] text-[#4a3b2c] font-cinzel mt-1 tracking-wider font-medium">
+        Khan &amp; Zarekari Wedding Invitation · 27th December 2026
+      </p>
+<!-- Back to top smooth button -->
+<button class="mt-4 text-xs font-cinzel text-amber-900/80 hover:text-amber-950 font-bold tracking-widest inline-flex items-center gap-1" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        ↑ RETURN TO TOP
+      </button>
+</div>
+</div>
+<!-- Toast Notification element -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-[#2c2217] border border-amber-400 text-amber-100 text-xs px-5 py-2.5 rounded-full shadow-2xl opacity-0 transition-opacity duration-300 pointer-events-none font-cinzel tracking-wider" id="toastNotification">
+    Venue Address Copied!
+  </div>
+<!-- JavaScript for Ambient Motion, Countdown, Audio, and Interactions -->
+<script>
+    // 1. Generate Floating Golden Dust Motes
+    const dustContainer = document.getElementById('dustContainer');
+    if (dustContainer) {
+      const moteCount = 35;
+      for (let i = 0; i < moteCount; i++) {
+        const mote = document.createElement('div');
+        mote.className = 'dust-mote';
+        mote.style.left = Math.random() * 100 + '%';
+        mote.style.top = Math.random() * 100 + '%';
+        const duration = 6 + Math.random() * 10;
+        const delay = Math.random() * 8;
+        mote.style.animationDuration = duration + 's';
+        mote.style.animationDelay = '-' + delay + 's';
+        const size = 1.5 + Math.random() * 2.5;
+        mote.style.width = size + 'px';
+        mote.style.height = size + 'px';
+        dustContainer.appendChild(mote);
+      }
+    }
+
+    // 2. Smooth Scroll Reveal (Intersection Observer)
+    const observerOptions = {
+      threshold: 0.12,
+      rootMargin: "0px 0px -40px 0px"
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+      revealObserver.observe(el);
+    });
+
+    // 3. Live Countdown Timer to 27th Dec 2026, 11:30 AM IST
+    function updateCountdown() {
+      const weddingDate = new Date("December 27, 2026 11:30:00").getTime();
+      const now = new Date().getTime();
+      const difference = weddingDate - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((difference % (1000 * 60)) / 1000);
+
+        const daysEl = document.getElementById("daysCount");
+        const hoursEl = document.getElementById("hoursCount");
+        const minsEl = document.getElementById("minsCount");
+        const secsEl = document.getElementById("secsCount");
+
+        if (daysEl) daysEl.innerText = String(days).padStart(2, '0');
+        if (hoursEl) hoursEl.innerText = String(hours).padStart(2, '0');
+        if (minsEl) minsEl.innerText = String(mins).padStart(2, '0');
+        if (secsEl) secsEl.innerText = String(secs).padStart(2, '0');
+      }
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // 4. Audio Ambient Music Toggle
+    const musicToggle = document.getElementById('musicToggle');
+    const audio = document.getElementById('weddingAudio');
+    let isPlaying = false;
+
+    if (musicToggle && audio) {
+      musicToggle.addEventListener('click', () => {
+        if (!isPlaying) {
+          audio.play().then(() => {
+            isPlaying = true;
+            musicToggle.querySelector('span').innerText = "PAUSE TUNE";
+            musicToggle.style.borderColor = "#b8860b";
+          }).catch(e => {
+            console.log("Audio play prevented: ", e);
+          });
+        } else {
+          audio.pause();
+          isPlaying = false;
+          musicToggle.querySelector('span').innerText = "PLAY SUFI TUNE";
+          musicToggle.style.borderColor = "rgba(184, 134, 11, 0.45)";
+        }
+      });
+    }
+
+    // 5. Copy Venue Address with Toast
+    function copyVenueAddress() {
+      const addressText = "Govind Garden, Opp. Gawli Farm, Bhosari-Alandi Road, Dighi, Pune";
+      navigator.clipboard.writeText(addressText).then(() => {
+        const toast = document.getElementById('toastNotification');
+        const btnLabel = document.getElementById('copyBtnLabel');
+        if (btnLabel) btnLabel.innerText = "COPIED TO CLIPBOARD!";
+        if (toast) {
+          toast.style.opacity = '1';
+          setTimeout(() => {
+            toast.style.opacity = '0';
+            if (btnLabel) btnLabel.innerText = "COPY VENUE ADDRESS";
+          }, 2400);
+        }
+      });
+    }
+
+    // 6. WhatsApp RSVP Handler
+    function sendWhatsAppRSVP(e) {
+      e.preventDefault();
+      const name = document.getElementById('guestName').value;
+      const attendance = document.getElementById('attendance').value;
+      const count = document.getElementById('guestCount').value;
+      const dua = document.getElementById('duaMessage').value;
+
+      const message = `*Wedding Blessing & RSVP for Mahek & Aman*%0A` +
+        `*Guest Name:* ${encodeURIComponent(name)}%0A` +
+        `*Attendance:* ${encodeURIComponent(attendance)}%0A` +
+        `*Guests Count:* ${encodeURIComponent(count)}%0A` +
+        `*Dua & Wishes:* ${encodeURIComponent(dua || 'Barakallahu lakuma wa baraka alaikuma')}%0A%0A` +
+        `*Khan & Zarekari Wedding Ceremony - 27th Dec 2026*`;
+
+      // Direct WhatsApp link to host contact number
+      window.open(`https://wa.me/918788148687?text=${message}`, '_blank');
+    }
+  </script>
+</body></html>

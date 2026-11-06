@@ -1,0 +1,2941 @@
+:root {
+      --cream-light: #fcf9f2;
+      --cream-base: #f7f1e5;
+      --cream-warm: #f0e6d2;
+      --gold-primary: #b8860b;
+      --gold-deep: #8a6414;
+      --gold-rich: #a07823;
+      --gold-glow: rgba(200, 155, 45, 0.28);
+      --charcoal-warm: #2c2217;
+      --bronze-dark: #3d3023;
+    }
+
+    * {
+      -webkit-tap-highlight-color: transparent;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f7f1e5;
+      background-image: 
+        radial-gradient(ellipse 80% 50% at 50% 25%, rgba(255, 255, 255, 0.90) 0%, rgba(248, 239, 222, 0.80) 50%, rgba(235, 220, 195, 0.95) 100%),
+        url('assets/continuous_wedding_bg.jpg');
+      background-repeat: repeat;
+      background-size: 440px auto;
+      background-attachment: fixed;
+      background-position: center top;
+      color: var(--charcoal-warm);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Ambient Continuous Royal Ivory & Arabesque Tapestry Container (Continuous Wedding BG) */
+    .regal-scroll-container {
+      position: relative;
+      background-color: #faf5ea;
+      background-image: url('assets/continuous_wedding_bg.jpg');
+      background-repeat: repeat-y;
+      background-position: top center;
+      background-size: 100% auto;
+      min-height: 100vh;
+      width: 100%;
+      max-width: 440px;
+      margin: 0 auto;
+      box-shadow: 0 0 60px rgba(184, 134, 11, 0.22), 0 25px 90px rgba(60, 40, 10, 0.18), 0 0 0 1px rgba(184, 134, 11, 0.35);
+      overflow: hidden;
+      border-left: 1.5px solid rgba(184, 134, 11, 0.35);
+      border-right: 1.5px solid rgba(184, 134, 11, 0.35);
+    }
+
+    /* Subtle Gold Manuscript Margin Filigree Runners */
+    .regal-scroll-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 7px;
+      width: 1px;
+      background: linear-gradient(180deg, transparent 0%, rgba(184, 134, 11, 0.22) 15%, rgba(184, 134, 11, 0.22) 85%, transparent 100%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .regal-scroll-container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 7px;
+      width: 1px;
+      background: linear-gradient(180deg, transparent 0%, rgba(184, 134, 11, 0.22) 15%, rgba(184, 134, 11, 0.22) 85%, transparent 100%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Hero Arch Backdrop (stitch_bg.jpg) - Exclusive to Hero Section */
+    .bg-mihrab-layer {
+      display: block !important;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('assets/stitch_bg.jpg') !important;
+      background-size: 100% auto;
+      background-position: top center;
+      background-repeat: no-repeat;
+      opacity: 1;
+      pointer-events: none;
+      z-index: 1;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
+    }
+
+    /* Permanently removed synthetic SVG damask */
+    .bg-arabesque-layer {
+      display: none !important;
+    }
+
+    /* Ambient Golden Motes & Bokeh Particles (Subtle, Atmospheric & Background-Only) */
+    .dust-particles {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+      overflow: hidden;
+    }
+
+    .dust-mote {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      /* Soft, ethereal golden mote with feather-soft glow */
+      background: radial-gradient(circle, rgba(255, 245, 210, 0.9) 0%, rgba(212, 175, 55, 0.45) 45%, rgba(184, 134, 11, 0) 75%);
+      box-shadow: 0 0 6px 1px rgba(212, 175, 55, 0.3);
+      animation: floatMote ease-in-out infinite alternate;
+      will-change: transform, opacity;
+    }
+
+    @keyframes floatMote {
+      0% {
+        transform: translate3d(0, 0, 0) scale(0.85);
+        opacity: 0.18;
+      }
+      35% {
+        transform: translate3d(7px, -18px, 0) scale(1.08);
+        opacity: 0.52;
+      }
+      70% {
+        transform: translate3d(-5px, -34px, 0) scale(0.92);
+        opacity: 0.32;
+      }
+      100% {
+        transform: translate3d(3px, -46px, 0) scale(1);
+        opacity: 0.45;
+      }
+    }
+
+    /* Typography styles */
+    .font-script {
+      font-family: 'Great Vibes', cursive;
+    }
+
+    .font-pinyon {
+      font-family: 'Pinyon Script', cursive;
+    }
+
+    .font-cinzel {
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.16em;
+    }
+
+    .font-body {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .font-sans-luxury {
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.12em;
+    }
+
+    /* Rich Gold Foil Shimmer effect on typography */
+    .gold-foil-text {
+      background: linear-gradient(135deg, #7c5813 0%, #b8860b 28%, #dcb35a 50%, #946912 75%, #64440a 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: foilShine 8s ease-in-out infinite alternate;
+      display: inline-block;
+      padding-top: 10px;
+      padding-bottom: 4px;
+      overflow: visible;
+    }
+
+    @keyframes foilShine {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    /* Hanging Animated Lantern with Physics Pendulum Damping */
+    .lantern-chain {
+      transform-origin: top center;
+      animation: lanternGentleSway 6.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes lanternGentleSway {
+      0% { transform: rotate(-2.2deg); }
+      100% { transform: rotate(2.2deg); }
+    }
+
+    /* Hero Royal Arch Frame (Original Clean Architecture) */
+    .arch-frame {
+      border: 1.5px solid #d4af37;
+      border-radius: 130px 130px 24px 24px;
+      position: relative;
+      background:
+        radial-gradient(circle at 50% 18%, #ffffff 0%, #fdfaf4 40%, #f8f1e2 75%, #eee3c8 100%),
+        radial-gradient(#d4af37 0.5px, transparent 0.5px);
+      background-size: 100% 100%, 18px 18px;
+      backdrop-filter: blur(12px);
+      box-shadow:
+        0 14px 38px rgba(184, 134, 11, 0.18),
+        0 4px 14px rgba(60, 40, 10, 0.08),
+        inset 0 1px 2px #ffffff,
+        inset 0 0 35px rgba(212, 175, 55, 0.12);
+      overflow: visible;
+    }
+
+    .arch-frame::before {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      border: 1px dashed rgba(212, 175, 55, 0.35);
+      border-radius: 126px 126px 20px 20px;
+      pointer-events: none;
+    }
+
+    /* Dynamic Gold Foil Light Sheen Sweep */
+    .shimmer-foil-container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shimmer-foil-container::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -120%;
+      width: 80%;
+      height: 200%;
+      background: linear-gradient(
+        105deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0) 35%,
+        rgba(255, 248, 220, 0.45) 50%,
+        rgba(255, 255, 255, 0.75) 52%,
+        rgba(255, 248, 220, 0.45) 54%,
+        transparent 70%
+      );
+      transform: rotate(25deg);
+      animation: foilSheenSweep 8s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes foilSheenSweep {
+      0% {
+        left: -120%;
+      }
+      30% {
+        left: 160%;
+      }
+      100% {
+        left: 160%;
+      }
+    }
+
+    /* Couple Names Radiant Halo Glow */
+    .names-aura-glow {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+    .names-aura-glow::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 220px;
+      height: 52px;
+      background: radial-gradient(ellipse, rgba(245, 215, 127, 0.35) 0%, rgba(212, 175, 55, 0.1) 50%, transparent 75%);
+      pointer-events: none;
+      z-index: 0;
+      border-radius: 50%;
+      filter: blur(8px);
+      animation: auraPulse 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes auraPulse {
+      0% { transform: translate(-50%, -50%) scale(0.94); opacity: 0.65; }
+      100% { transform: translate(-50%, -50%) scale(1.08); opacity: 1; }
+    }
+
+    /* Frosted Ivory & Gold Inlaid Panel */
+    .inlaid-panel {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.92) 0%, rgba(251, 245, 233, 0.95) 100%);
+      border: 1px solid rgba(184, 134, 11, 0.32);
+      border-radius: 18px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 28px rgba(160, 120, 35, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+      position: relative;
+    }
+
+    /* Section Divider Ornament */
+    .divider-gold {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 1.6rem 0;
+      opacity: 0.9;
+    }
+
+    .divider-line {
+      height: 1px;
+      flex-grow: 1;
+      background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.55), transparent);
+    }
+
+    /* Scroll animations */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: all 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-on-scroll.is-revealed,
+    .hero-screen-viewport .reveal-on-scroll {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Glowing Warm Gold Luxury Button */
+    .btn-gold-luxury {
+      background: linear-gradient(135deg, #d4af37 0%, #b8860b 50%, #996e12 100%);
+      color: #ffffff;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.15em;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 5px 20px rgba(184, 134, 11, 0.32);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 238, 179, 0.7);
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-gold-luxury:active {
+      transform: scale(0.97);
+      box-shadow: 0 2px 10px rgba(184, 134, 11, 0.22);
+    }
+
+    .btn-glass-gold {
+      background: rgba(255, 255, 255, 0.85);
+      color: var(--gold-deep);
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.14em;
+      font-weight: 600;
+      font-size: 0.7rem;
+      padding: 10px 20px;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border: 1px solid rgba(184, 134, 11, 0.38);
+      box-shadow: 0 3px 12px rgba(184, 134, 11, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .btn-glass-gold:active {
+      background: rgba(247, 237, 218, 0.95);
+    }
+
+    /* Floating music button in bright cream & gold */
+    .music-pill {
+      position: fixed;
+      top: 14px;
+      right: max(14px, calc(50% - 220px + 14px));
+      z-index: 50;
+      background: rgba(255, 253, 248, 0.94);
+      border: 1px solid rgba(184, 134, 11, 0.45);
+      backdrop-filter: blur(8px);
+      border-radius: 9999px;
+      padding: 4.5px 11px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 18px rgba(184, 134, 11, 0.18);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .audio-bar {
+      width: 2.5px;
+      background: #b8860b;
+      border-radius: 2px;
+      height: 4px;
+      transition: height 0.3s ease;
+    }
+
+    .music-pill.playing .audio-bar {
+      animation: soundwave 1.2s ease-in-out infinite alternate;
+    }
+
+    .music-pill.playing .audio-bar:nth-child(2) { height: 12px; animation-delay: 0.2s; }
+    .music-pill.playing .audio-bar:nth-child(3) { height: 8px; animation-delay: 0.4s; }
+    .music-pill.playing .audio-bar:nth-child(4) { height: 14px; animation-delay: 0.1s; }
+
+    @keyframes soundwave {
+      0% { height: 4px; }
+      100% { height: 15px; }
+    }
+
+    /* Countdown digits */
+    .countdown-tile {
+      background: linear-gradient(180deg, #ffffff 0%, #f9f4ea 100%);
+      border: 1px solid rgba(184, 134, 11, 0.32);
+      border-radius: 12px;
+      padding: 9px 4px;
+      box-shadow: 0 3px 10px rgba(184, 134, 11, 0.08), inset 0 1px 0 #ffffff;
+    }
+
+    /* Custom Form Fields */
+    .luxury-input {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(184, 134, 11, 0.35);
+      border-radius: 8px;
+      color: #2c2217;
+      padding: 10px 14px;
+      font-size: 0.95rem;
+      width: 100%;
+      outline: none;
+      transition: all 0.3s ease;
+      font-family: 'Cormorant Garamond', serif;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.03);
+    }
+
+    .luxury-input:focus {
+      border-color: #b8860b;
+      box-shadow: 0 0 10px rgba(184, 134, 11, 0.22);
+      background: #ffffff;
+    }
+
+    .luxury-input::placeholder {
+      color: rgba(60, 48, 35, 0.45);
+    }
+
+
+
+/* First Viewport Exclusivity Container */
+.hero-screen-viewport {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+  padding: 16px 0 20px 0;
+  width: 100%;
+}
+
+/* Calligraphic Bismillah Text (100% Unclipped Native Vector Font Rendering) */
+.calligraphic-bismillah-text {
+  font-family: 'Amiri Quran', 'Amiri', 'Scheherazade New', serif;
+  font-size: clamp(2.35rem, 8vw, 3rem);
+  font-weight: 700;
+  line-height: 1.7;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 12px;
+  color: #261301 !important;
+  -webkit-text-fill-color: #261301 !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.95), 0 0 12px rgba(212, 175, 55, 0.2);
+  display: block;
+  overflow: visible !important;
+}
+
+/* Shahi Royal Couple Cartouche (Illuminated Pavilion Framing MAHEK & AMAN) */
+.shahi-couple-cartouche {
+  position: relative;
+  margin: 10px 4px 12px;
+  padding: 14px 8px 12px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.78) 0%,
+    rgba(254, 250, 242, 0.6) 50%,
+    rgba(252, 244, 228, 0.68) 100%
+  );
+  border: 1px solid rgba(184, 134, 11, 0.42);
+  border-radius: 16px;
+  box-shadow:
+    0 4px 20px rgba(184, 134, 11, 0.08),
+    0 1px 3px rgba(60, 35, 10, 0.04),
+    inset 0 0 18px rgba(255, 255, 255, 0.85),
+    inset 0 1px 2px #ffffff;
+}
+
+.shahi-couple-cartouche::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px dashed rgba(184, 134, 11, 0.26);
+  border-radius: 13px;
+  pointer-events: none;
+}
+
+.cartouche-corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  color: #b8860b;
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.cartouche-corner.corner-tl { top: 6px; left: 6px; }
+.cartouche-corner.corner-tr { top: 6px; right: 6px; transform: scaleX(-1); }
+.cartouche-corner.corner-bl { bottom: 6px; left: 6px; transform: scaleY(-1); }
+.cartouche-corner.corner-br { bottom: 6px; right: 6px; transform: scale(-1); }
+
+.with-rosette {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 6px 0;
+}
+
+.with-rosette .rosette-line {
+  width: 36px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.65));
+}
+
+.with-rosette .rosette-line.rev {
+  background: linear-gradient(90deg, rgba(184, 134, 11, 0.65), transparent);
+}
+
+/* Couple Names Classical Imperial Serif in Majestic All-Caps (Slow, Clean, Flawless Royal Shimmer) */
+.bride-groom-caps {
+  font-family: 'Cinzel Decorative', 'Cinzel', serif;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  font-size: clamp(2.35rem, 8.5vw, 3.25rem);
+  line-height: 1.16;
+  display: inline-block;
+  padding-top: 3px;
+  padding-bottom: 2px;
+  overflow: visible !important;
+  background: linear-gradient(
+    110deg,
+    #422504 0%,
+    #422504 38%,
+    #a37418 45%,
+    #fcedbe 50%,
+    #a37418 55%,
+    #422504 62%,
+    #422504 100%
+  );
+  background-size: 300% 100%;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: cleanRoyalShimmer 8.5s ease-in-out infinite;
+  filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.85)) drop-shadow(0 2px 4px rgba(70, 38, 8, 0.18));
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes cleanRoyalShimmer {
+  0% {
+    background-position: 100% 50%;
+  }
+  72% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Refined Stationery Plaques & Ribbons */
+.host-lineage-plaque {
+  background: linear-gradient(90deg, rgba(184, 134, 11, 0) 0%, rgba(184, 134, 11, 0.08) 25%, rgba(184, 134, 11, 0.08) 75%, rgba(184, 134, 11, 0) 100%);
+  border-top: 1px solid rgba(184, 134, 11, 0.25);
+  border-bottom: 1px solid rgba(184, 134, 11, 0.25);
+  border-radius: 6px;
+}
+
+.town-badge {
+  background: linear-gradient(135deg, rgba(254, 243, 199, 0.75) 0%, rgba(253, 230, 138, 0.85) 50%, rgba(254, 243, 199, 0.75) 100%);
+  border: 1px solid rgba(184, 134, 11, 0.4);
+  box-shadow: 0 1px 3px rgba(184, 134, 11, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.ceremony-ribbon {
+  background: linear-gradient(135deg, rgba(254, 243, 199, 0.5) 0%, rgba(250, 225, 150, 0.65) 50%, rgba(254, 243, 199, 0.5) 100%);
+  border: 1px solid rgba(184, 134, 11, 0.45);
+  box-shadow: 0 2px 8px rgba(184, 134, 11, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  max-width: 88%;
+  box-sizing: border-box;
+}
+
+/* Ambient Ethereal Golden Light Motes (Behind Arch Card) */
+.hero-celestial-canvas {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.gold-mote {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(1.5px);
+  will-change: transform, opacity;
+  background: radial-gradient(circle, rgba(255, 238, 173, 0.95) 0%, rgba(230, 185, 75, 0.6) 45%, rgba(184, 134, 11, 0) 75%);
+}
+
+.mote-1 {
+  width: 14px;
+  height: 14px;
+  top: 18%;
+  left: 12%;
+  animation: floatMote1 14s ease-in-out infinite alternate;
+}
+.mote-2 {
+  width: 18px;
+  height: 18px;
+  top: 32%;
+  right: 14%;
+  animation: floatMote2 18s ease-in-out infinite alternate;
+}
+.mote-3 {
+  width: 12px;
+  height: 12px;
+  top: 68%;
+  left: 15%;
+  animation: floatMote3 16s ease-in-out infinite alternate;
+}
+.mote-4 {
+  width: 16px;
+  height: 16px;
+  top: 75%;
+  right: 16%;
+  animation: floatMote4 20s ease-in-out infinite alternate;
+}
+.mote-5 {
+  width: 10px;
+  height: 10px;
+  top: 48%;
+  left: 8%;
+  animation: floatMote5 15s ease-in-out infinite alternate;
+}
+
+@keyframes floatMote1 {
+  0% { transform: translate(0, 0) scale(0.85); opacity: 0.25; }
+  50% { transform: translate(12px, -35px) scale(1.15); opacity: 0.75; }
+  100% { transform: translate(-8px, -65px) scale(0.9); opacity: 0.2; }
+}
+@keyframes floatMote2 {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+  50% { transform: translate(-15px, -45px) scale(1.25); opacity: 0.85; }
+  100% { transform: translate(10px, -80px) scale(0.95); opacity: 0.25; }
+}
+@keyframes floatMote3 {
+  0% { transform: translate(0, 0) scale(0.9); opacity: 0.2; }
+  50% { transform: translate(14px, -30px) scale(1.2); opacity: 0.7; }
+  100% { transform: translate(-10px, -60px) scale(0.85); opacity: 0.15; }
+}
+@keyframes floatMote4 {
+  0% { transform: translate(0, 0) scale(1.1); opacity: 0.35; }
+  50% { transform: translate(-12px, -40px) scale(0.85); opacity: 0.65; }
+  100% { transform: translate(8px, -75px) scale(1.15); opacity: 0.25; }
+}
+@keyframes floatMote5 {
+  0% { transform: translate(0, 0) scale(0.8); opacity: 0.15; }
+  50% { transform: translate(8px, -25px) scale(1.1); opacity: 0.6; }
+  100% { transform: translate(-6px, -50px) scale(0.85); opacity: 0.1; }
+}
+
+/* Royal Ceremony Inscription Plaque (Stationery Ribbon familiar with Host Lineage Plaque) */
+.ceremony-insignia-plaque {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 6px 18px 5px;
+  background: linear-gradient(
+    90deg,
+    rgba(184, 134, 11, 0) 0%,
+    rgba(184, 134, 11, 0.08) 20%,
+    rgba(184, 134, 11, 0.08) 80%,
+    rgba(184, 134, 11, 0) 100%
+  );
+  border-top: 1px solid rgba(184, 134, 11, 0.28);
+  border-bottom: 1px solid rgba(184, 134, 11, 0.28);
+  border-radius: 4px;
+  max-width: 90%;
+  box-sizing: border-box;
+}
+
+
+.parentage-plaque {
+  position: relative;
+  padding: 2px 0;
+}
+
+/* Minimalist Luxury Scroll Cue Indicator */
+.scroll-indicator {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 4px 14px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.scroll-indicator:hover .scroll-indicator-arrow {
+  transform: translateY(3px);
+}
+
+.scroll-indicator-arrow {
+  animation: scrollPulse 2.2s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes scrollPulse {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.75;
+  }
+  50% {
+    transform: translateY(4px);
+    opacity: 1;
+  }
+}
+
+/* Fallback Scroll Pill Button */
+.scroll-invitation-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(255, 253, 248, 0.95) 0%, rgba(250, 242, 225, 0.98) 100%);
+  border: 1px solid rgba(184, 134, 11, 0.45);
+  border-radius: 9999px;
+  padding: 7px 20px;
+  box-shadow: 0 4px 16px rgba(184, 134, 11, 0.16), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-top: 0;
+}
+
+.scroll-invitation-btn:hover,
+.scroll-invitation-btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(184, 134, 11, 0.3), inset 0 1px 1px #ffffff;
+  border-color: #b8860b;
+}
+
+.scroll-invitation-btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Date Section Scroll Margin for Fixed Audio Bar Offset */
+#dateSection {
+  scroll-margin-top: 84px;
+}
+
+/* Dedicated Royal Numeral Font for High-Legibility Sacred Dates & Countdown */
+.luxury-numeral {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* Royal Date Card with Tactile Luxury Cardstock & Matching Corner Arch Design */
+.royal-date-card {
+  position: relative;
+  box-sizing: border-box;
+  background-color: #faf6ee;
+  background-image:
+    /* Top lighting halo */
+    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.98) 0%, rgba(254, 251, 245, 0.94) 50%, rgba(247, 239, 224, 0.96) 100%),
+    /* Handmade paper cotton fiber stipple layer 1 */
+    radial-gradient(circle at 50% 50%, rgba(184, 134, 11, 0.08) 0.65px, transparent 0.65px),
+    /* Handmade paper cotton fiber stipple layer 2 (offset) */
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.85) 0.5px, transparent 0.5px),
+    /* Micro-tactile cardstock fiber grain via SVG filter */
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperFibers'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.62  0 0 0 0 0.48  0 0 0 0 0.28  0 0 0 0.055 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperFibers)'/%3E%3C/svg%3E");
+  background-size: 100% 100%, 12px 12px, 8px 8px, 160px 160px;
+  background-position: 0 0, 0 0, 4px 4px, 0 0;
+  border: 1.5px solid rgba(184, 134, 11, 0.48);
+  border-radius: 26px 26px 22px 22px;
+  padding: 22px 18px 20px 18px;
+  box-shadow: 0 10px 32px rgba(184, 134, 11, 0.11), 0 2px 8px rgba(60, 40, 10, 0.05), inset 0 1px 3px rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+
+.royal-date-card::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(184, 134, 11, 0.22);
+  border-radius: 21px 21px 17px 17px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Bespoke Arabesque Tazhib Spandrel (Dual-Corner Top-Right & Bottom-Left Flow) */
+.royal-date-card::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23b8860b'%3E%3Cpath d='M220,12 C175,35 125,85 75,145 C45,180 20,205 0,220' stroke-width='1.1' stroke-opacity='0.28'/%3E%3Cpath d='M220,28 C180,55 135,102 90,158 C62,192 38,212 12,220' stroke-width='0.7' stroke-opacity='0.22' stroke-dasharray='3 2.5'/%3E%3Cpath d='M220,3 C190,20 148,65 100,125 C65,168 30,200 0,215' stroke-width='0.5' stroke-opacity='0.16'/%3E%3Cpath d='M195,30 C175,40 162,56 166,72 C170,84 184,86 190,74 C195,64 182,54 172,62' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cpath d='M110,125 C95,140 85,160 90,174 C94,185 106,184 110,172 C114,162 100,154 94,164' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cpath d='M145,85 C132,98 122,118 128,132 C133,142 144,140 148,130 C151,120 138,114 132,122' stroke-width='0.75' stroke-opacity='0.22'/%3E%3Ccircle cx='162' cy='42' r='5' stroke-width='0.6' stroke-opacity='0.28'/%3E%3Cpolygon points='162,34 164,39 169,42 164,45 162,50 160,45 155,42 160,39' fill='%23b8860b' fill-opacity='0.22'/%3E%3Cpolygon points='167,37 165,41 167,46 163,45 157,47 159,43 157,38 161,39' fill='%23b8860b' fill-opacity='0.15'/%3E%3Ccircle cx='55' cy='168' r='3.5' stroke-width='0.5' stroke-opacity='0.25'/%3E%3Cpolygon points='55,161 56.5,166 61.5,168 56.5,170 55,175 53.5,170 48.5,168 53.5,166' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='208' cy='18' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='180' cy='62' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='135' cy='112' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='95' cy='152' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='38' cy='192' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='12' cy='212' r='1.2' fill='%23b8860b' fill-opacity='0.22'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='rotate(180 110 110)' fill='none' stroke='%23b8860b'%3E%3Cpath d='M220,12 C175,35 125,85 75,145 C45,180 20,205 0,220' stroke-width='1.1' stroke-opacity='0.28'/%3E%3Cpath d='M220,28 C180,55 135,102 90,158 C62,192 38,212 12,220' stroke-width='0.7' stroke-opacity='0.22' stroke-dasharray='3 2.5'/%3E%3Cpath d='M220,3 C190,20 148,65 100,125 C65,168 30,200 0,215' stroke-width='0.5' stroke-opacity='0.16'/%3E%3Cpath d='M195,30 C175,40 162,56 166,72 C170,84 184,86 190,74 C195,64 182,54 172,62' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cpath d='M110,125 C95,140 85,160 90,174 C94,185 106,184 110,172 C114,162 100,154 94,164' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cpath d='M145,85 C132,98 122,118 128,132 C133,142 144,140 148,130 C151,120 138,114 132,122' stroke-width='0.75' stroke-opacity='0.22'/%3E%3Ccircle cx='162' cy='42' r='5' stroke-width='0.6' stroke-opacity='0.28'/%3E%3Cpolygon points='162,34 164,39 169,42 164,45 162,50 160,45 155,42 160,39' fill='%23b8860b' fill-opacity='0.22'/%3E%3Cpolygon points='167,37 165,41 167,46 163,45 157,47 159,43 157,38 161,39' fill='%23b8860b' fill-opacity='0.15'/%3E%3Ccircle cx='55' cy='168' r='3.5' stroke-width='0.5' stroke-opacity='0.25'/%3E%3Cpolygon points='55,161 56.5,166 61.5,168 56.5,170 55,175 53.5,170 48.5,168 53.5,166' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='208' cy='18' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='180' cy='62' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='135' cy='112' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='95' cy='152' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='38' cy='192' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='12' cy='212' r='1.2' fill='%23b8860b' fill-opacity='0.22'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: top right, bottom left;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 165px 165px, 165px 165px;
+}
+
+/* Embossed Royal Date Medallion with Tactile Paper Grain */
+.royal-date-medallion {
+  background-color: #fbf7ee;
+  background-image:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.97) 0%, rgba(253, 246, 230, 0.92) 100%),
+    radial-gradient(circle at 50% 50%, rgba(184, 134, 11, 0.07) 0.6px, transparent 0.6px),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperFibersMed'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.6  0 0 0 0 0.45  0 0 0 0 0.25  0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperFibersMed)'/%3E%3C/svg%3E");
+  background-size: 100% 100%, 10px 10px, 120px 120px;
+  border: 1.5px solid rgba(184, 134, 11, 0.42);
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(184, 134, 11, 0.12), inset 0 1px 2px #ffffff;
+  position: relative;
+}
+
+/* Clean, Perfectly Proportioned Save to Calendar Pill - Stable & Premium */
+.btn-calendar-clean {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(253, 246, 232, 0.95) 100%);
+  color: #3d2305;
+  border: 1px solid rgba(184, 134, 11, 0.42);
+  box-shadow: 0 2px 8px rgba(184, 134, 11, 0.08), inset 0 1px 1px #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.btn-calendar-clean:hover,
+.btn-calendar-clean:focus-visible {
+  /* No hover jump, lift, or shift - completely calm, clean, and premium */
+  color: #3d2305;
+  border-color: rgba(184, 134, 11, 0.55);
+  transform: none;
+  box-shadow: 0 2px 8px rgba(184, 134, 11, 0.08), inset 0 1px 1px #ffffff;
+}
+
+.btn-calendar-clean:active {
+  transform: none;
+}
+
+/* Islamic Architectural Countdown Card with Tactile Paper Texture & Ambient Breathing Glow */
+.countdown-islamic-card {
+  position: relative;
+  box-sizing: border-box;
+  background-color: #faf6ee;
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.98) 0%, rgba(254, 251, 245, 0.94) 50%, rgba(247, 239, 224, 0.96) 100%),
+    radial-gradient(circle at 50% 50%, rgba(184, 134, 11, 0.08) 0.65px, transparent 0.65px),
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.85) 0.5px, transparent 0.5px),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperFibersCd'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.62  0 0 0 0 0.48  0 0 0 0 0.28  0 0 0 0.055 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperFibersCd)'/%3E%3C/svg%3E");
+  background-size: 100% 100%, 12px 12px, 8px 8px, 160px 160px;
+  background-position: 0 0, 0 0, 4px 4px, 0 0;
+  border: 1.5px solid rgba(184, 134, 11, 0.45);
+  border-radius: 26px;
+  padding: 14px 12px;
+  box-shadow: 0 10px 32px rgba(184, 134, 11, 0.12), inset 0 1px 2px #ffffff;
+  backdrop-filter: blur(10px);
+  animation: lanternBreathing 6s ease-in-out infinite alternate;
+}
+
+.countdown-islamic-card::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(184, 134, 11, 0.18);
+  border-radius: 22px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Celestial Astrolabe Quadrant (Dual-Corner Top-Right & Bottom-Left Flow) */
+.countdown-islamic-card::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23b8860b'%3E%3Cpath d='M220,10 C140,25 70,95 20,200 C15,212 10,218 0,220' stroke-width='1.1' stroke-opacity='0.28'/%3E%3Cpath d='M220,32 C155,48 95,110 50,205' stroke-width='0.75' stroke-opacity='0.24'/%3E%3Cpath d='M220,52 C170,68 120,120 78,210' stroke-width='0.6' stroke-opacity='0.2' stroke-dasharray='3 2.5'/%3E%3Cline x1='205' y1='25' x2='198' y2='32' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cline x1='188' y1='40' x2='181' y2='47' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cline x1='168' y1='58' x2='161' y2='64' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cline x1='145' y1='78' x2='138' y2='83' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cline x1='120' y1='102' x2='113' y2='107' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cline x1='92' y1='130' x2='86' y2='134' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cline x1='65' y1='162' x2='59' y2='166' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cline x1='38' y1='195' x2='33' y2='198' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Ccircle cx='155' cy='48' r='6' stroke-width='0.7' stroke-opacity='0.28'/%3E%3Cpath d='M155,38 L157,46 L165,48 L157,50 L155,58 L153,50 L145,48 L153,46 Z' fill='%23b8860b' fill-opacity='0.24'/%3E%3Ccircle cx='75' cy='145' r='4' stroke-width='0.5' stroke-opacity='0.22'/%3E%3Cpolygon points='75,138 76.5,143 81.5,145 76.5,147 75,152 73.5,147 68.5,145 73.5,143' fill='%23b8860b' fill-opacity='0.2'/%3E%3Ccircle cx='195' cy='20' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='122' cy='85' r='1.5' fill='%23b8860b' fill-opacity='0.28'/%3E%3Ccircle cx='55' cy='180' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='18' cy='212' r='1.2' fill='%23b8860b' fill-opacity='0.22'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='rotate(180 110 110)' fill='none' stroke='%23b8860b'%3E%3Cpath d='M220,10 C140,25 70,95 20,200 C15,212 10,218 0,220' stroke-width='1.1' stroke-opacity='0.28'/%3E%3Cpath d='M220,32 C155,48 95,110 50,205' stroke-width='0.75' stroke-opacity='0.24'/%3E%3Cpath d='M220,52 C170,68 120,120 78,210' stroke-width='0.6' stroke-opacity='0.2' stroke-dasharray='3 2.5'/%3E%3Cline x1='205' y1='25' x2='198' y2='32' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cline x1='188' y1='40' x2='181' y2='47' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cline x1='168' y1='58' x2='161' y2='64' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cline x1='145' y1='78' x2='138' y2='83' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cline x1='120' y1='102' x2='113' y2='107' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cline x1='92' y1='130' x2='86' y2='134' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cline x1='65' y1='162' x2='59' y2='166' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cline x1='38' y1='195' x2='33' y2='198' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Ccircle cx='155' cy='48' r='6' stroke-width='0.7' stroke-opacity='0.28'/%3E%3Cpath d='M155,38 L157,46 L165,48 L157,50 L155,58 L153,50 L145,48 L153,46 Z' fill='%23b8860b' fill-opacity='0.24'/%3E%3Ccircle cx='75' cy='145' r='4' stroke-width='0.5' stroke-opacity='0.22'/%3E%3Cpolygon points='75,138 76.5,143 81.5,145 76.5,147 75,152 73.5,147 68.5,145 73.5,143' fill='%23b8860b' fill-opacity='0.2'/%3E%3Ccircle cx='195' cy='20' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='122' cy='85' r='1.5' fill='%23b8860b' fill-opacity='0.28'/%3E%3Ccircle cx='55' cy='180' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='18' cy='212' r='1.2' fill='%23b8860b' fill-opacity='0.22'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: top right, bottom left;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 165px 165px, 165px 165px;
+}
+
+@keyframes lanternBreathing {
+  0% {
+    box-shadow: 0 10px 30px rgba(184, 134, 11, 0.1), 0 0 15px rgba(212, 175, 55, 0.06), inset 0 1px 2px #ffffff;
+  }
+  100% {
+    box-shadow: 0 12px 38px rgba(184, 134, 11, 0.18), 0 0 25px rgba(212, 175, 55, 0.16), inset 0 1px 2px #ffffff;
+  }
+}
+
+/* Mihrab Arch Pods for Horology Units with Antique Astrolabe Aesthetics */
+.mihrab-countdown-pod {
+  background-color: #fbf8f0;
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(253, 247, 233, 0.92) 100%),
+    radial-gradient(circle at 50% 50%, rgba(184, 134, 11, 0.06) 0.6px, transparent 0.6px),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperFibersPod'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.6  0 0 0 0 0.45  0 0 0 0 0.25  0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperFibersPod)'/%3E%3C/svg%3E");
+  background-size: 100% 100%, 10px 10px, 120px 120px;
+  border: 1.5px solid rgba(184, 134, 11, 0.45);
+  border-radius: 22px 22px 14px 14px;
+  padding: 9px 5px 7px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 5px 16px rgba(184, 134, 11, 0.1), inset 0 1px 2px #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.mihrab-countdown-pod::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px dashed rgba(184, 134, 11, 0.22);
+  border-radius: 18px 18px 10px 10px;
+  pointer-events: none;
+}
+
+.pod-arch-accent {
+  width: 16px;
+  height: 4px;
+  border-top: 1.8px solid rgba(184, 134, 11, 0.65);
+  border-radius: 50% 50% 0 0;
+  margin-bottom: 3px;
+}
+
+@keyframes horologyTickPulse {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(212, 175, 55, 0));
+  }
+  25% {
+    transform: scale(1.06);
+    filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.55));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(212, 175, 55, 0));
+  }
+}
+
+.tick-pulse {
+  animation: horologyTickPulse 0.45s ease-out;
+}
+
+/* Shimmering Gold Foil Numerals in High-Legibility Royal Playfair Display Font */
+.countdown-gold-numeral {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.45rem, 5.2vw, 1.95rem);
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: lining-nums tabular-nums;
+  letter-spacing: -0.01em;
+  background: linear-gradient(135deg, #7c5813 0%, #b8860b 28%, #dcb35a 50%, #946912 75%, #64440a 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: foilShine 8s ease-in-out infinite alternate;
+  display: block;
+}
+
+.pod-label {
+  font-family: 'Cinzel', serif;
+  font-size: 7.5px;
+  font-weight: 700;
+  color: #8a6414;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.ribbon-divider {
+  font-size: 1rem;
+  color: rgba(184, 134, 11, 0.4);
+  line-height: 1;
+  user-select: none;
+  padding: 0 2px;
+}
+
+/* ==========================================================================
+   Section 3: Royal Wedding Itinerary Design System
+   ========================================================================== */
+
+/* Scroll Margin Offset for Fixed Music Pill Clearance */
+#itinerarySection {
+  scroll-margin-top: 84px;
+}
+
+/* Architectural Islamic Itinerary Card with Tactile 350gsm Cotton Cardstock */
+.itinerary-event-card {
+  position: relative;
+  box-sizing: border-box;
+  background-color: #faf6ee;
+  background-image:
+    /* Directional Lighting Halo */
+    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.98) 0%, rgba(254, 251, 245, 0.94) 50%, rgba(247, 239, 224, 0.96) 100%),
+    /* Handmade Paper Cotton Fiber Stipple Layer 1 */
+    radial-gradient(circle at 50% 50%, rgba(184, 134, 11, 0.08) 0.65px, transparent 0.65px),
+    /* Handmade Paper Cotton Fiber Stipple Layer 2 */
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.85) 0.5px, transparent 0.5px),
+    /* Micro-Tactile Cardstock Fiber Grain via SVG Filter */
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperFibersItin'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.62  0 0 0 0 0.48  0 0 0 0 0.28  0 0 0 0.055 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperFibersItin)'/%3E%3C/svg%3E");
+  background-size: 100% 100%, 12px 12px, 8px 8px, 160px 160px;
+  background-position: 0 0, 0 0, 4px 4px, 0 0;
+  border: 1.5px solid rgba(184, 134, 11, 0.48);
+  border-radius: 24px;
+  padding: 18px 20px 20px 20px;
+  box-shadow: 0 10px 32px rgba(184, 134, 11, 0.11), 0 2px 8px rgba(60, 40, 10, 0.05), inset 0 1px 3px rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.itinerary-event-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 38px rgba(184, 134, 11, 0.16), 0 4px 12px rgba(60, 40, 10, 0.08), inset 0 1px 3px rgba(255, 255, 255, 1);
+}
+
+/* Inner Delicate Beveled Gold Inset Border */
+.itinerary-event-card::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(184, 134, 11, 0.22);
+  border-radius: 20px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Schedule Card 1 (Nikah): Ceremonial Jasmine Floral & Nikah Vine Spandrel */
+.itinerary-card-nikah::after,
+.itinerary-event-card:first-of-type::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23b8860b'%3E%3Cpath d='M220,10 C182,24 158,68 132,98 C102,128 62,154 0,220' stroke-width='1.0' stroke-opacity='0.26'/%3E%3Cpath d='M220,26 C186,40 164,82 140,112 C112,142 78,168 14,220' stroke-width='0.6' stroke-opacity='0.18' stroke-dasharray='2.5 2'/%3E%3Cpath d='M176,34 C168,28 164,38 168,44 C172,50 182,42 176,34 Z' fill='%23b8860b' fill-opacity='0.18' stroke-width='0.6' stroke-opacity='0.26'/%3E%3Cpath d='M190,44 C182,38 178,48 182,54 C186,60 196,52 190,44 Z' fill='%23b8860b' fill-opacity='0.18' stroke-width='0.6' stroke-opacity='0.26'/%3E%3Cpath d='M180,56 C174,50 170,60 174,66 C178,72 188,64 180,56 Z' fill='%23b8860b' fill-opacity='0.18' stroke-width='0.6' stroke-opacity='0.26'/%3E%3Ccircle cx='180' cy='48' r='2.5' fill='%23b8860b' fill-opacity='0.28'/%3E%3Cpath d='M134,94 C126,88 122,98 126,104 C130,110 140,102 134,94 Z' fill='%23b8860b' fill-opacity='0.18' stroke-width='0.6' stroke-opacity='0.26'/%3E%3Cpath d='M146,104 C138,98 134,108 138,114 C142,120 152,112 146,104 Z' fill='%23b8860b' fill-opacity='0.18' stroke-width='0.6' stroke-opacity='0.26'/%3E%3Ccircle cx='138' cy='102' r='2.2' fill='%23b8860b' fill-opacity='0.28'/%3E%3Cpath d='M84,152 C76,146 72,156 76,162 C80,168 90,160 84,152 Z' fill='%23b8860b' fill-opacity='0.18' stroke-width='0.6' stroke-opacity='0.26'/%3E%3Ccircle cx='80' cy='156' r='1.8' fill='%23b8860b' fill-opacity='0.28'/%3E%3Cpath d='M156,66 C148,70 144,80 148,86' stroke-width='0.65' stroke-opacity='0.22'/%3E%3Cpath d='M106,128 C98,132 94,142 98,148' stroke-width='0.65' stroke-opacity='0.22'/%3E%3Ccircle cx='208' cy='16' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='156' cy='74' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='114' cy='118' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='64' cy='168' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='15' cy='212' r='1.2' fill='%23b8860b' fill-opacity='0.2'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='rotate(180 110 110)' fill='none' stroke='%23b8860b'%3E%3Cpath d='M220,10 C182,24 158,68 132,98 C102,128 62,154 0,220' stroke-width='1.0' stroke-opacity='0.26'/%3E%3Cpath d='M220,26 C186,40 164,82 140,112 C112,142 78,168 14,220' stroke-width='0.6' stroke-opacity='0.18' stroke-dasharray='2.5 2'/%3E%3Cpath d='M176,34 C168,28 164,38 168,44 C172,50 182,42 176,34 Z' fill='%23b8860b' fill-opacity='0.18' stroke-width='0.6' stroke-opacity='0.26'/%3E%3Cpath d='M190,44 C182,38 178,48 182,54 C186,60 196,52 190,44 Z' fill='%23b8860b' fill-opacity='0.18' stroke-width='0.6' stroke-opacity='0.26'/%3E%3Cpath d='M180,56 C174,50 170,60 174,66 C178,72 188,64 180,56 Z' fill='%23b8860b' fill-opacity='0.18' stroke-width='0.6' stroke-opacity='0.26'/%3E%3Ccircle cx='180' cy='48' r='2.5' fill='%23b8860b' fill-opacity='0.28'/%3E%3Cpath d='M134,94 C126,88 122,98 126,104 C130,110 140,102 134,94 Z' fill='%23b8860b' fill-opacity='0.18' stroke-width='0.6' stroke-opacity='0.26'/%3E%3Cpath d='M146,104 C138,98 134,108 138,114 C142,120 152,112 146,104 Z' fill='%23b8860b' fill-opacity='0.18' stroke-width='0.6' stroke-opacity='0.26'/%3E%3Ccircle cx='138' cy='102' r='2.2' fill='%23b8860b' fill-opacity='0.28'/%3E%3Cpath d='M84,152 C76,146 72,156 76,162 C80,168 90,160 84,152 Z' fill='%23b8860b' fill-opacity='0.18' stroke-width='0.6' stroke-opacity='0.26'/%3E%3Ccircle cx='80' cy='156' r='1.8' fill='%23b8860b' fill-opacity='0.28'/%3E%3Cpath d='M156,66 C148,70 144,80 148,86' stroke-width='0.65' stroke-opacity='0.22'/%3E%3Cpath d='M106,128 C98,132 94,142 98,148' stroke-width='0.65' stroke-opacity='0.22'/%3E%3Ccircle cx='208' cy='16' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='156' cy='74' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='114' cy='118' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='64' cy='168' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='15' cy='212' r='1.2' fill='%23b8860b' fill-opacity='0.2'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: top right, bottom left;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 155px 155px, 155px 155px;
+}
+
+/* Schedule Card 2 (Lunch): Festive Walimah Feast Laurel & Ribbon-Wave Spandrel */
+.itinerary-card-lunch::after,
+.itinerary-event-card:nth-of-type(2)::after,
+.itinerary-event-card:last-of-type::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23b8860b'%3E%3Cpath d='M220,14 C172,18 138,58 112,108 C86,156 46,186 0,220' stroke-width='1.0' stroke-opacity='0.26'/%3E%3Cpath d='M220,32 C178,36 148,76 124,124 C98,168 62,196 14,220' stroke-width='0.6' stroke-opacity='0.18' stroke-dasharray='3 2'/%3E%3Cpath d='M194,18 C180,16 172,24 176,34 C180,44 194,42 194,18 Z' fill='%23b8860b' fill-opacity='0.16' stroke-width='0.6' stroke-opacity='0.25'/%3E%3Cpath d='M168,36 C158,28 150,38 156,46 C162,54 174,48 168,36 Z' fill='%23b8860b' fill-opacity='0.16' stroke-width='0.6' stroke-opacity='0.25'/%3E%3Cpath d='M146,70 C132,66 126,76 130,86 C136,96 148,90 146,70 Z' fill='%23b8860b' fill-opacity='0.16' stroke-width='0.6' stroke-opacity='0.25'/%3E%3Cpath d='M120,94 C110,86 102,96 108,104 C114,112 126,106 120,94 Z' fill='%23b8860b' fill-opacity='0.16' stroke-width='0.6' stroke-opacity='0.25'/%3E%3Cpath d='M96,132 C84,128 78,138 82,148 C88,156 98,150 96,132 Z' fill='%23b8860b' fill-opacity='0.16' stroke-width='0.6' stroke-opacity='0.25'/%3E%3Cpath d='M68,162 C58,154 52,164 56,172 C62,180 72,174 68,162 Z' fill='%23b8860b' fill-opacity='0.16' stroke-width='0.6' stroke-opacity='0.25'/%3E%3Ccircle cx='182' cy='30' r='2' fill='%23b8860b' fill-opacity='0.28'/%3E%3Ccircle cx='186' cy='34' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='138' cy='80' r='2' fill='%23b8860b' fill-opacity='0.28'/%3E%3Ccircle cx='142' cy='84' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='88' cy='140' r='2' fill='%23b8860b' fill-opacity='0.28'/%3E%3Ccircle cx='92' cy='144' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='210' cy='10' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='16' cy='212' r='1.2' fill='%23b8860b' fill-opacity='0.2'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='rotate(180 110 110)' fill='none' stroke='%23b8860b'%3E%3Cpath d='M220,14 C172,18 138,58 112,108 C86,156 46,186 0,220' stroke-width='1.0' stroke-opacity='0.26'/%3E%3Cpath d='M220,32 C178,36 148,76 124,124 C98,168 62,196 14,220' stroke-width='0.6' stroke-opacity='0.18' stroke-dasharray='3 2'/%3E%3Cpath d='M194,18 C180,16 172,24 176,34 C180,44 194,42 194,18 Z' fill='%23b8860b' fill-opacity='0.16' stroke-width='0.6' stroke-opacity='0.25'/%3E%3Cpath d='M168,36 C158,28 150,38 156,46 C162,54 174,48 168,36 Z' fill='%23b8860b' fill-opacity='0.16' stroke-width='0.6' stroke-opacity='0.25'/%3E%3Cpath d='M146,70 C132,66 126,76 130,86 C136,96 148,90 146,70 Z' fill='%23b8860b' fill-opacity='0.16' stroke-width='0.6' stroke-opacity='0.25'/%3E%3Cpath d='M120,94 C110,86 102,96 108,104 C114,112 126,106 120,94 Z' fill='%23b8860b' fill-opacity='0.16' stroke-width='0.6' stroke-opacity='0.25'/%3E%3Cpath d='M96,132 C84,128 78,138 82,148 C88,156 98,150 96,132 Z' fill='%23b8860b' fill-opacity='0.16' stroke-width='0.6' stroke-opacity='0.25'/%3E%3Cpath d='M68,162 C58,154 52,164 56,172 C62,180 72,174 68,162 Z' fill='%23b8860b' fill-opacity='0.16' stroke-width='0.6' stroke-opacity='0.25'/%3E%3Ccircle cx='182' cy='30' r='2' fill='%23b8860b' fill-opacity='0.28'/%3E%3Ccircle cx='186' cy='34' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='138' cy='80' r='2' fill='%23b8860b' fill-opacity='0.28'/%3E%3Ccircle cx='142' cy='84' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='88' cy='140' r='2' fill='%23b8860b' fill-opacity='0.28'/%3E%3Ccircle cx='92' cy='144' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='210' cy='10' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='16' cy='212' r='1.2' fill='%23b8860b' fill-opacity='0.2'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: top right, bottom left;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 155px 155px, 155px 155px;
+}
+
+/* Elevated Itinerary Category Pill */
+.itinerary-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(254, 243, 199, 0.55) 0%, rgba(251, 226, 150, 0.3) 100%);
+  border: 1px solid rgba(184, 134, 11, 0.35);
+  box-shadow: 0 1px 3px rgba(184, 134, 11, 0.08);
+}
+
+/* Royal Time Badge Cartouche with Playfair Display Numeral */
+.itinerary-time-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(135deg, rgba(254, 243, 199, 0.75) 0%, rgba(251, 226, 150, 0.85) 50%, rgba(254, 243, 199, 0.75) 100%);
+  border: 1px solid rgba(184, 134, 11, 0.45);
+  border-radius: 9999px;
+  padding: 3px 10px;
+  box-shadow: 0 1px 4px rgba(184, 134, 11, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: 11px;
+  color: #382004;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* Connecting Living Royal Timeline Cord Between Events */
+.itinerary-timeline-cord {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 4px 0;
+  position: relative;
+  height: 44px;
+}
+
+.timeline-cord-line {
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(184, 134, 11, 0.65) 0%, rgba(212, 175, 55, 0.35) 50%, rgba(184, 134, 11, 0.65) 100%);
+  position: relative;
+  overflow: hidden;
+  border-radius: 9999px;
+}
+
+.timeline-cord-line::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.95) 50%, transparent 100%);
+  animation: cordLightPulse 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes cordLightPulse {
+  0% { top: -100%; opacity: 0; }
+  30% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.timeline-cord-node {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffffff 0%, #fdf6e6 50%, #f5e4bd 100%);
+  border: 1.4px solid rgba(184, 134, 11, 0.55);
+  box-shadow: 0 2px 10px rgba(184, 134, 11, 0.2), inset 0 1px 1px #ffffff, 0 0 10px rgba(212, 175, 55, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8a6414;
+  font-size: 11px;
+  animation: nodePulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes nodePulse {
+  0% { transform: translate(-50%, -50%) scale(0.96); box-shadow: 0 2px 8px rgba(184, 134, 11, 0.15), inset 0 1px 1px #ffffff; }
+  100% { transform: translate(-50%, -50%) scale(1.05); box-shadow: 0 4px 14px rgba(184, 134, 11, 0.28), inset 0 1px 1px #ffffff, 0 0 14px rgba(212, 175, 55, 0.35); }
+}
+
+/* Arabic Calligraphy Accent Badge */
+.itinerary-arabic-badge {
+  font-family: 'Amiri', 'Amiri Quran', Georgia, serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #6e4e08;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.85);
+  line-height: 1.2;
+  display: inline-block;
+}
+
+/* ==========================================================================
+   Section 4: Royal Nikah & Banquet Venue Design System
+   ========================================================================== */
+
+/* Scroll Margin Offset for Fixed Music Pill Clearance */
+#venueSection {
+  scroll-margin-top: 84px;
+}
+
+/* Architectural Islamic Venue Card (Unified with Itinerary Design System) */
+.royal-venue-card {
+  position: relative;
+  box-sizing: border-box;
+  background-color: #faf6ee;
+  background-image:
+    /* Directional Lighting Halo */
+    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.98) 0%, rgba(254, 251, 245, 0.94) 50%, rgba(247, 239, 224, 0.96) 100%),
+    /* Handmade Paper Cotton Fiber Stipple Layer 1 */
+    radial-gradient(circle at 50% 50%, rgba(184, 134, 11, 0.08) 0.65px, transparent 0.65px),
+    /* Handmade Paper Cotton Fiber Stipple Layer 2 */
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.85) 0.5px, transparent 0.5px),
+    /* Micro-Tactile Cardstock Fiber Grain via SVG Filter */
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperFibersVenue'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.62  0 0 0 0 0.48  0 0 0 0 0.28  0 0 0 0.055 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperFibersVenue)'/%3E%3C/svg%3E");
+  background-size: 100% 100%, 12px 12px, 8px 8px, 160px 160px;
+  background-position: 0 0, 0 0, 4px 4px, 0 0;
+  border: 1.5px solid rgba(184, 134, 11, 0.48);
+  border-radius: 26px 26px 22px 22px;
+  padding: 22px 18px 20px 18px;
+  box-shadow: 0 10px 32px rgba(184, 134, 11, 0.11), 0 2px 8px rgba(60, 40, 10, 0.05), inset 0 1px 3px rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+
+/* Inner Delicate Beveled Gold Inset Border */
+.royal-venue-card::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(184, 134, 11, 0.22);
+  border-radius: 21px 21px 17px 17px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Bespoke Arabesque Tazhib Spandrel (Dual-Corner Top-Right & Bottom-Left Flow) */
+.royal-venue-card::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23b8860b'%3E%3Cpath d='M220,12 C175,35 125,85 75,145 C45,180 20,205 0,220' stroke-width='1.1' stroke-opacity='0.28'/%3E%3Cpath d='M220,28 C180,55 135,102 90,158 C62,192 38,212 12,220' stroke-width='0.7' stroke-opacity='0.22' stroke-dasharray='3 2.5'/%3E%3Cpath d='M220,3 C190,20 148,65 100,125 C65,168 30,200 0,215' stroke-width='0.5' stroke-opacity='0.16'/%3E%3Cpath d='M195,30 C175,40 162,56 166,72 C170,84 184,86 190,74 C195,64 182,54 172,62' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cpath d='M110,125 C95,140 85,160 90,174 C94,185 106,184 110,172 C114,162 100,154 94,164' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cpath d='M145,85 C132,98 122,118 128,132 C133,142 144,140 148,130 C151,120 138,114 132,122' stroke-width='0.75' stroke-opacity='0.22'/%3E%3Ccircle cx='162' cy='42' r='5' stroke-width='0.6' stroke-opacity='0.28'/%3E%3Cpolygon points='162,34 164,39 169,42 164,45 162,50 160,45 155,42 160,39' fill='%23b8860b' fill-opacity='0.22'/%3E%3Cpolygon points='167,37 165,41 167,46 163,45 157,47 159,43 157,38 161,39' fill='%23b8860b' fill-opacity='0.15'/%3E%3Ccircle cx='55' cy='168' r='3.5' stroke-width='0.5' stroke-opacity='0.25'/%3E%3Cpolygon points='55,161 56.5,166 61.5,168 56.5,170 55,175 53.5,170 48.5,168 53.5,166' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='208' cy='18' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='180' cy='62' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='135' cy='112' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='95' cy='152' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='38' cy='192' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='12' cy='212' r='1.2' fill='%23b8860b' fill-opacity='0.22'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='rotate(180 110 110)' fill='none' stroke='%23b8860b'%3E%3Cpath d='M220,12 C175,35 125,85 75,145 C45,180 20,205 0,220' stroke-width='1.1' stroke-opacity='0.28'/%3E%3Cpath d='M220,28 C180,55 135,102 90,158 C62,192 38,212 12,220' stroke-width='0.7' stroke-opacity='0.22' stroke-dasharray='3 2.5'/%3E%3Cpath d='M220,3 C190,20 148,65 100,125 C65,168 30,200 0,215' stroke-width='0.5' stroke-opacity='0.16'/%3E%3Cpath d='M195,30 C175,40 162,56 166,72 C170,84 184,86 190,74 C195,64 182,54 172,62' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cpath d='M110,125 C95,140 85,160 90,174 C94,185 106,184 110,172 C114,162 100,154 94,164' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cpath d='M145,85 C132,98 122,118 128,132 C133,142 144,140 148,130 C151,120 138,114 132,122' stroke-width='0.75' stroke-opacity='0.22'/%3E%3Ccircle cx='162' cy='42' r='5' stroke-width='0.6' stroke-opacity='0.28'/%3E%3Cpolygon points='162,34 164,39 169,42 164,45 162,50 160,45 155,42 160,39' fill='%23b8860b' fill-opacity='0.22'/%3E%3Cpolygon points='167,37 165,41 167,46 163,45 157,47 159,43 157,38 161,39' fill='%23b8860b' fill-opacity='0.15'/%3E%3Ccircle cx='55' cy='168' r='3.5' stroke-width='0.5' stroke-opacity='0.25'/%3E%3Cpolygon points='55,161 56.5,166 61.5,168 56.5,170 55,175 53.5,170 48.5,168 53.5,166' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='208' cy='18' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='180' cy='62' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='135' cy='112' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='95' cy='152' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='38' cy='192' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='12' cy='212' r='1.2' fill='%23b8860b' fill-opacity='0.22'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: top right, bottom left;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 165px 165px, 165px 165px;
+}
+
+/* Clean Royal Venue Address & Guest Notes (No Nested Boxes) */
+.venue-address-block {
+  margin: 14px 0 12px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.venue-street-line {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 15.5px;
+  color: #2b1c0e;
+  line-height: 1.45;
+}
+
+.venue-city-line {
+  font-family: 'Cinzel', serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #382004;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.venue-guest-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background: rgba(184, 134, 11, 0.06);
+  border: 1px solid rgba(184, 134, 11, 0.2);
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  font-weight: 700;
+  color: #6e4e08;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Responsive Dual Action Controls (Side-by-side on Mobile) */
+.venue-action-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 16px;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+@media (max-width: 350px) {
+  .venue-action-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Primary Action: Open in Google Maps - Elevated Golden Royal Pill */
+.btn-venue-maps {
+  background: linear-gradient(135deg, #fef4dc 0%, #f7dc96 48%, #e4b855 100%);
+  color: #452402;
+  font-family: 'Cinzel', serif;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 9px 6px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+  min-width: 0;
+  border: 1px solid rgba(184, 134, 11, 0.55);
+  box-shadow: 0 3px 10px rgba(184, 134, 11, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.btn-venue-maps:hover {
+  background: linear-gradient(135deg, #fff9e8 0%, #fae2a8 50%, #edc263 100%);
+  border-color: rgba(184, 134, 11, 0.75);
+  box-shadow: 0 5px 16px rgba(184, 134, 11, 0.25), inset 0 1px 1px #ffffff;
+  transform: translateY(-1px);
+  color: #2b1500;
+}
+
+.btn-venue-maps:active {
+  transform: scale(0.98);
+}
+
+.btn-venue-maps svg {
+  color: #7d4e0e;
+  width: 14px;
+  height: 14px;
+}
+
+/* Secondary Action: Copy Venue Address - Delicate Ivory Cardstock Pill */
+.btn-venue-copy {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(254, 250, 242, 0.94) 100%);
+  color: #4a2903;
+  font-family: 'Cinzel', serif;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 9px 6px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+  min-width: 0;
+  border: 1px solid rgba(184, 134, 11, 0.35);
+  box-shadow: 0 2px 8px rgba(120, 53, 15, 0.05), inset 0 1px 1px #ffffff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.btn-venue-copy:hover {
+  background: #ffffff;
+  border-color: rgba(184, 134, 11, 0.65);
+  box-shadow: 0 4px 12px rgba(184, 134, 11, 0.12), inset 0 1px 1px #ffffff;
+  transform: translateY(-1px);
+  color: #2e1801;
+}
+
+.btn-venue-copy:active {
+  transform: scale(0.98);
+}
+
+.btn-venue-copy svg {
+  color: #8c5812;
+  width: 14px;
+  height: 14px;
+}
+
+/* ==========================================================================
+   Section 5 & Wispr Extensions: Sacred Ribbons, Internal Headers & Dua Chips
+   ========================================================================== */
+
+/* Sacred Illuminated Quranic Covenant Ribbon (Wispr) */
+.quran-covenant-ribbon {
+  position: relative;
+  box-sizing: border-box;
+  background-color: #faf6ee;
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.98) 0%, rgba(254, 251, 245, 0.94) 50%, rgba(247, 239, 224, 0.96) 100%),
+    radial-gradient(circle at 50% 50%, rgba(184, 134, 11, 0.08) 0.65px, transparent 0.65px);
+  border: 1.5px solid rgba(184, 134, 11, 0.45);
+  border-radius: 20px;
+  padding: 14px 16px;
+  box-shadow: 0 8px 26px rgba(184, 134, 11, 0.1), inset 0 1px 2px #ffffff;
+  overflow: hidden;
+}
+
+.quran-covenant-ribbon::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(184, 134, 11, 0.2);
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+/* Sacred Quranic Tazhib Spandrel (Dual-Corner Top-Right & Bottom-Left Flow) */
+.quran-covenant-ribbon::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23b8860b'%3E%3Cpath d='M220,12 C175,35 125,85 75,145 C45,180 20,205 0,220' stroke-width='1.1' stroke-opacity='0.28'/%3E%3Cpath d='M220,28 C180,55 135,102 90,158 C62,192 38,212 12,220' stroke-width='0.7' stroke-opacity='0.22' stroke-dasharray='3 2.5'/%3E%3Cpath d='M220,3 C190,20 148,65 100,125 C65,168 30,200 0,215' stroke-width='0.5' stroke-opacity='0.16'/%3E%3Cpath d='M195,30 C175,40 162,56 166,72 C170,84 184,86 190,74 C195,64 182,54 172,62' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cpath d='M110,125 C95,140 85,160 90,174 C94,185 106,184 110,172 C114,162 100,154 94,164' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cpath d='M145,85 C132,98 122,118 128,132 C133,142 144,140 148,130 C151,120 138,114 132,122' stroke-width='0.75' stroke-opacity='0.22'/%3E%3Ccircle cx='162' cy='42' r='4' stroke-width='0.6' stroke-opacity='0.26'/%3E%3Cpolygon points='162,36 163.5,40 168,42 163.5,44 162,48 160.5,44 156,42 160.5,40' fill='%23b8860b' fill-opacity='0.22'/%3E%3Ccircle cx='55' cy='168' r='3' stroke-width='0.5' stroke-opacity='0.24'/%3E%3Cpolygon points='55,163 56,166.5 60,168 56,169.5 55,173 54,169.5 50,168 54,166.5' fill='%23b8860b' fill-opacity='0.24'/%3E%3Ccircle cx='208' cy='18' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='180' cy='62' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='135' cy='112' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='95' cy='152' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='38' cy='192' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='12' cy='212' r='1.2' fill='%23b8860b' fill-opacity='0.22'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='rotate(180 110 110)' fill='none' stroke='%23b8860b'%3E%3Cpath d='M220,12 C175,35 125,85 75,145 C45,180 20,205 0,220' stroke-width='1.1' stroke-opacity='0.28'/%3E%3Cpath d='M220,28 C180,55 135,102 90,158 C62,192 38,212 12,220' stroke-width='0.7' stroke-opacity='0.22' stroke-dasharray='3 2.5'/%3E%3Cpath d='M220,3 C190,20 148,65 100,125 C65,168 30,200 0,215' stroke-width='0.5' stroke-opacity='0.16'/%3E%3Cpath d='M195,30 C175,40 162,56 166,72 C170,84 184,86 190,74 C195,64 182,54 172,62' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cpath d='M110,125 C95,140 85,160 90,174 C94,185 106,184 110,172 C114,162 100,154 94,164' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cpath d='M145,85 C132,98 122,118 128,132 C133,142 144,140 148,130 C151,120 138,114 132,122' stroke-width='0.75' stroke-opacity='0.22'/%3E%3Ccircle cx='162' cy='42' r='4' stroke-width='0.6' stroke-opacity='0.26'/%3E%3Cpolygon points='162,36 163.5,40 168,42 163.5,44 162,48 160.5,44 156,42 160.5,40' fill='%23b8860b' fill-opacity='0.22'/%3E%3Ccircle cx='55' cy='168' r='3' stroke-width='0.5' stroke-opacity='0.24'/%3E%3Cpolygon points='55,163 56,166.5 60,168 56,169.5 55,173 54,169.5 50,168 54,166.5' fill='%23b8860b' fill-opacity='0.24'/%3E%3Ccircle cx='208' cy='18' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='180' cy='62' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='135' cy='112' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='95' cy='152' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='38' cy='192' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='12' cy='212' r='1.2' fill='%23b8860b' fill-opacity='0.22'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: top right, bottom left;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 145px 145px, 145px 145px;
+}
+
+/* Internal Card Headers (De-duplicated Clean Architecture) */
+.card-header-inner {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 12px;
+}
+
+.card-header-tag {
+  font-family: 'Cinzel', serif;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: #8a6414;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.card-header-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(1.75rem, 5.5vw, 2.15rem);
+  color: #8a6414;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.card-header-sub {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 11.5px;
+  color: #4a3828;
+  margin-top: 2px;
+  letter-spacing: 0.02em;
+}
+
+/* Royal Compliments Folio Card (Honor Roll Chassis) */
+.royal-compliments-card {
+  position: relative;
+  box-sizing: border-box;
+  background-color: #faf6ee;
+  background-image:
+    /* Directional Lighting Halo */
+    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.98) 0%, rgba(254, 251, 245, 0.94) 50%, rgba(247, 239, 224, 0.96) 100%),
+    /* Handmade Paper Cotton Fiber Stipple Layer 1 */
+    radial-gradient(circle at 50% 50%, rgba(184, 134, 11, 0.08) 0.65px, transparent 0.65px),
+    /* Handmade Paper Cotton Fiber Stipple Layer 2 */
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.85) 0.5px, transparent 0.5px),
+    /* Micro-Tactile Cardstock Fiber Grain via SVG Filter */
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperFibersCompliments'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.62  0 0 0 0 0.48  0 0 0 0 0.28  0 0 0 0.055 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperFibersCompliments)'/%3E%3C/svg%3E");
+  background-size: 100% 100%, 12px 12px, 8px 8px, 160px 160px;
+  background-position: 0 0, 0 0, 4px 4px, 0 0;
+  border: 1.5px solid rgba(184, 134, 11, 0.48);
+  border-radius: 26px 26px 22px 22px;
+  padding: 22px 16px 20px 16px;
+  box-shadow: 0 12px 36px rgba(184, 134, 11, 0.12), 0 2px 8px rgba(60, 40, 10, 0.05), inset 0 1px 3px #ffffff;
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+
+.royal-compliments-card::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(184, 134, 11, 0.22);
+  border-radius: 21px 21px 17px 17px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Authentic Tazhib Arabesque Spandrels (Crisp gold vector linework, matching Date Card) */
+.royal-compliments-card::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23b8860b'%3E%3Cpath d='M220,12 C175,35 125,85 75,145 C45,180 20,205 0,220' stroke-width='1.2' stroke-opacity='0.35'/%3E%3Cpath d='M220,28 C180,55 135,102 90,158 C62,192 38,212 12,220' stroke-width='0.8' stroke-opacity='0.25' stroke-dasharray='3 2.5'/%3E%3Cpath d='M220,3 C190,20 148,65 100,125 C65,168 30,200 0,215' stroke-width='0.6' stroke-opacity='0.2'/%3E%3Cpath d='M195,30 C175,40 162,56 166,72 C170,84 184,86 190,74 C195,64 182,54 172,62' stroke-width='0.9' stroke-opacity='0.3'/%3E%3Cpath d='M110,125 C95,140 85,160 90,174 C94,185 106,184 110,172 C114,162 100,154 94,164' stroke-width='0.9' stroke-opacity='0.3'/%3E%3Ccircle cx='162' cy='42' r='5' stroke-width='0.7' stroke-opacity='0.35'/%3E%3Cpolygon points='162,34 164,39 169,42 164,45 162,50 160,45 155,42 160,39' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='55' cy='168' r='3.5' stroke-width='0.6' stroke-opacity='0.3'/%3E%3Cpolygon points='55,161 56.5,166 61.5,168 56.5,170 55,175 53.5,170 48.5,168 53.5,166' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='208' cy='18' r='2' fill='%23b8860b' fill-opacity='0.45'/%3E%3Ccircle cx='180' cy='62' r='1.8' fill='%23b8860b' fill-opacity='0.35'/%3E%3Ccircle cx='135' cy='112' r='2' fill='%23b8860b' fill-opacity='0.4'/%3E%3Ccircle cx='95' cy='152' r='1.8' fill='%23b8860b' fill-opacity='0.35'/%3E%3Ccircle cx='38' cy='192' r='2' fill='%23b8860b' fill-opacity='0.4'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='rotate(180 110 110)' fill='none' stroke='%23b8860b'%3E%3Cpath d='M220,12 C175,35 125,85 75,145 C45,180 20,205 0,220' stroke-width='1.2' stroke-opacity='0.35'/%3E%3Cpath d='M220,28 C180,55 135,102 90,158 C62,192 38,212 12,220' stroke-width='0.8' stroke-opacity='0.25' stroke-dasharray='3 2.5'/%3E%3Cpath d='M220,3 C190,20 148,65 100,125 C65,168 30,200 0,215' stroke-width='0.6' stroke-opacity='0.2'/%3E%3Cpath d='M195,30 C175,40 162,56 166,72 C170,84 184,86 190,74 C195,64 182,54 172,62' stroke-width='0.9' stroke-opacity='0.3'/%3E%3Cpath d='M110,125 C95,140 85,160 90,174 C94,185 106,184 110,172 C114,162 100,154 94,164' stroke-width='0.9' stroke-opacity='0.3'/%3E%3Ccircle cx='162' cy='42' r='5' stroke-width='0.7' stroke-opacity='0.35'/%3E%3Cpolygon points='162,34 164,39 169,42 164,45 162,50 160,45 155,42 160,39' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='55' cy='168' r='3.5' stroke-width='0.6' stroke-opacity='0.3'/%3E%3Cpolygon points='55,161 56.5,166 61.5,168 56.5,170 55,175 53.5,170 48.5,168 53.5,166' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='208' cy='18' r='2' fill='%23b8860b' fill-opacity='0.45'/%3E%3Ccircle cx='180' cy='62' r='1.8' fill='%23b8860b' fill-opacity='0.35'/%3E%3Ccircle cx='135' cy='112' r='2' fill='%23b8860b' fill-opacity='0.4'/%3E%3Ccircle cx='95' cy='152' r='1.8' fill='%23b8860b' fill-opacity='0.35'/%3E%3Ccircle cx='38' cy='192' r='2' fill='%23b8860b' fill-opacity='0.4'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: top right, bottom left;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 195px 195px, 195px 195px;
+}
+
+/* Interactive Sunnah Dua Chips (Wsprs) */
+.dua-chip {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(253, 247, 235, 0.9) 100%);
+  border: 1px solid rgba(184, 134, 11, 0.35);
+  border-radius: 9999px;
+  padding: 5px 12px;
+  font-family: 'Cinzel', serif;
+  font-size: 8.5px;
+  font-weight: 700;
+  color: #6d4c0f;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 4px rgba(184, 134, 11, 0.08);
+  white-space: nowrap;
+}
+
+.dua-chip:hover {
+  border-color: rgba(184, 134, 11, 0.7);
+  background: linear-gradient(135deg, #fffdf8 0%, #fbf1da 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(184, 134, 11, 0.16);
+}
+
+.dua-chip:active {
+  transform: scale(0.97);
+}
+
+/* ==========================================================================
+   Section 5: Imperial Honor Roll ("With Best Compliments From")
+   Imperial Dignitary Plaques & Gilded Bullion Badges Architecture
+   ========================================================================== */
+
+/* Royal Calligraphic City Chapter Banner (Farman Illuminated Title) */
+.royal-city-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0 9px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.royal-city-banner:first-of-type {
+  margin-top: 4px;
+}
+
+.city-taper-wing {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.45), transparent);
+}
+
+.city-title-ornament {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 18px;
+  background: linear-gradient(135deg, #ffffff 0%, #fdf9ef 50%, #f5e8cc 100%);
+  border: 1px solid rgba(184, 134, 11, 0.42);
+  border-radius: 9999px;
+  box-shadow: 
+    0 2px 6px rgba(184, 134, 11, 0.1), 
+    inset 0 1px 1.5px #ffffff;
+}
+
+.city-star-node {
+  color: #b8860b;
+  font-size: 8.5px;
+  opacity: 0.9;
+}
+
+.city-foil-title {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: #4a2803;
+  text-transform: uppercase;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9);
+}
+
+/* Backward compatibility aliases */
+.shahi-city-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 16px 0 10px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.shahi-banner-flourish {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.55), transparent);
+}
+
+.shahi-city-bullion-badge {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  color: #4a2803;
+  padding: 3px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.shahi-badge-star {
+  font-size: 7.5px;
+  color: #b8860b;
+  opacity: 0.85;
+}
+
+/* Embedded Royal Dignitary Architecture (Single Column Inscription) */
+.royal-city-group {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 14px;
+}
+
+.royal-city-group:last-child {
+  margin-bottom: 0;
+}
+
+.royal-names-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 7px;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.royal-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 9px;
+  width: 250px;
+  max-width: 90%;
+  padding: 3.5px 8px;
+  border-radius: 6px;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+}
+
+.royal-name-row:hover {
+  background: rgba(184, 134, 11, 0.05);
+  transform: translateY(-0.5px);
+}
+
+.royal-name-star {
+  color: #b8860b;
+  font-size: 8px;
+  opacity: 0.85;
+  flex-shrink: 0;
+  transition: transform 0.22s ease;
+}
+
+.royal-name-row:hover .royal-name-star {
+  transform: scale(1.2) rotate(45deg);
+  opacity: 1;
+}
+
+.royal-name-string {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(12px, 3.3vw, 13.5px);
+  font-weight: 700;
+  color: #381e05;
+  letter-spacing: 0.045em;
+  line-height: 1.4;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.95);
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.royal-name-row:hover .royal-name-string {
+  color: #8c6014;
+}
+
+/* Symmetrical Dignitary Plaque Grid (Legacy fallback) */
+.shahi-plaque-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+/* Royal Dignitary Plaque Component */
+.shahi-dignitary-card {
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 50%, #f5ead3 100%);
+  border: 1.2px solid rgba(184, 134, 11, 0.42);
+  border-radius: 12px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 44px;
+  min-width: 0;
+  box-shadow: 
+    0 2px 7px rgba(184, 134, 11, 0.08), 
+    inset 0 1px 2px rgba(255, 255, 255, 0.95);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.shahi-dignitary-card::before {
+  content: '';
+  position: absolute;
+  inset: 2.5px;
+  border: 1px solid rgba(184, 134, 11, 0.18);
+  border-radius: 9px;
+  pointer-events: none;
+}
+
+.shahi-dignitary-card:hover {
+  border-color: #b8860b;
+  background: linear-gradient(135deg, #ffffff 0%, #fffdf8 45%, #fcedcb 100%);
+  transform: translateY(-1.5px);
+  box-shadow: 
+    0 6px 18px rgba(184, 134, 11, 0.22), 
+    inset 0 1px 2px #ffffff;
+}
+
+.shahi-dignitary-card:active {
+  transform: scale(0.985);
+}
+
+.shahi-dignitary-name {
+  font-family: 'Cinzel', serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #261302;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+  position: relative;
+  z-index: 2;
+  text-transform: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.shahi-gold-star {
+  color: #b8860b;
+  font-size: 8.5px;
+  margin-right: 5px;
+  opacity: 0.9;
+  flex-shrink: 0;
+}
+
+/* Centered Single Dignitary Wrapper & Component */
+.shahi-elder-center-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.shahi-dignitary-card.is-center-elder {
+  width: 72%;
+  max-width: 270px;
+  min-width: 210px;
+  margin: 0 auto;
+}
+
+/* Backward compatibility aliases */
+.shahi-dignitary-card.is-wide {
+  width: 72%;
+  max-width: 270px;
+  min-width: 210px;
+  margin: 7px auto 0 auto;
+}
+
+.shahi-mohol-cartouche {
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 50%, #f5ead3 100%);
+  border: 1.2px solid rgba(184, 134, 11, 0.42);
+  border-radius: 12px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 44px;
+  width: 72%;
+  max-width: 270px;
+  min-width: 210px;
+  margin: 0 auto;
+  box-shadow: 0 2px 7px rgba(184, 134, 11, 0.08), inset 0 1px 2px #fff;
+}
+
+.shahi-mohol-name-text {
+  font-family: 'Cinzel', serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #261302;
+}
+
+/* Continuous Royal Axis Connecting Rosette Node (Legacy) */
+.royal-axis-node {
+  display: none;
+}
+
+/* Royal Fleuron Divider (Legacy fallback) */
+.shahi-royal-fleuron-sep {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 14px 0 6px 0;
+  opacity: 0.75;
+  position: relative;
+  z-index: 10;
+}
+
+.shahi-fleuron-line {
+  width: 42px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.6), transparent);
+}
+
+.shahi-fleuron-glyph {
+  color: #b8860b;
+  font-size: 8px;
+}
+
+/* Sacred Arabic Inscription for Extended Family */
+.arabic-compliments-dua {
+  font-family: 'Amiri', 'Traditional Arabic', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #7d4e0e;
+  margin: 6px 0 4px 0;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 2px rgba(184, 134, 11, 0.2);
+}
+
+/* In Cherished Memory Tribute Card (Royal Memorial Chassis) */
+.memory-tribute-card {
+  position: relative;
+  box-sizing: border-box;
+  background-color: #faf6ee;
+  background-image:
+    /* Directional Lighting Halo */
+    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.98) 0%, rgba(254, 251, 245, 0.94) 50%, rgba(247, 239, 224, 0.96) 100%),
+    /* Handmade Paper Cotton Fiber Stipple Layer 1 */
+    radial-gradient(circle at 50% 50%, rgba(184, 134, 11, 0.08) 0.65px, transparent 0.65px),
+    /* Handmade Paper Cotton Fiber Stipple Layer 2 */
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.85) 0.5px, transparent 0.5px),
+    /* Micro-Tactile Cardstock Fiber Grain via SVG Filter */
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperFibersMemory'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.62  0 0 0 0 0.48  0 0 0 0 0.28  0 0 0 0.055 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperFibersMemory)'/%3E%3C/svg%3E");
+  background-size: 100% 100%, 12px 12px, 8px 8px, 160px 160px;
+  background-position: 0 0, 0 0, 4px 4px, 0 0;
+  border: 1.5px solid rgba(184, 134, 11, 0.48);
+  border-radius: 26px;
+  padding: 22px 14px 20px 14px;
+  box-shadow: 0 12px 36px rgba(184, 134, 11, 0.12), 0 2px 8px rgba(60, 40, 10, 0.05), inset 0 1px 3px #ffffff;
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .memory-tribute-card {
+    padding: 24px 20px 22px 20px;
+  }
+}
+
+.memory-tribute-card::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(184, 134, 11, 0.22);
+  border-radius: 21px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Dual-Corner Tazhib Arabesques (Gold vector linework, matching Royal Folio standards) */
+.memory-tribute-card::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23b8860b'%3E%3Cpath d='M220,12 C175,35 125,85 75,145 C45,180 20,205 0,220' stroke-width='1.2' stroke-opacity='0.35'/%3E%3Cpath d='M220,28 C180,55 135,102 90,158 C62,192 38,212 12,220' stroke-width='0.8' stroke-opacity='0.25' stroke-dasharray='3 2.5'/%3E%3Cpath d='M220,3 C190,20 148,65 100,125 C65,168 30,200 0,215' stroke-width='0.6' stroke-opacity='0.2'/%3E%3Cpath d='M195,30 C175,40 162,56 166,72 C170,84 184,86 190,74 C195,64 182,54 172,62' stroke-width='0.9' stroke-opacity='0.3'/%3E%3Cpath d='M110,125 C95,140 85,160 90,174 C94,185 106,184 110,172 C114,162 100,154 94,164' stroke-width='0.9' stroke-opacity='0.3'/%3E%3Ccircle cx='162' cy='42' r='5' stroke-width='0.7' stroke-opacity='0.35'/%3E%3Cpolygon points='162,34 164,39 169,42 164,45 162,50 160,45 155,42 160,39' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='55' cy='168' r='3.5' stroke-width='0.6' stroke-opacity='0.3'/%3E%3Cpolygon points='55,161 56.5,166 61.5,168 56.5,170 55,175 53.5,170 48.5,168 53.5,166' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='208' cy='18' r='2' fill='%23b8860b' fill-opacity='0.45'/%3E%3Ccircle cx='180' cy='62' r='1.8' fill='%23b8860b' fill-opacity='0.35'/%3E%3Ccircle cx='135' cy='112' r='2' fill='%23b8860b' fill-opacity='0.4'/%3E%3Ccircle cx='95' cy='152' r='1.8' fill='%23b8860b' fill-opacity='0.35'/%3E%3Ccircle cx='38' cy='192' r='2' fill='%23b8860b' fill-opacity='0.4'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='rotate(180 110 110)' fill='none' stroke='%23b8860b'%3E%3Cpath d='M220,12 C175,35 125,85 75,145 C45,180 20,205 0,220' stroke-width='1.2' stroke-opacity='0.35'/%3E%3Cpath d='M220,28 C180,55 135,102 90,158 C62,192 38,212 12,220' stroke-width='0.8' stroke-opacity='0.25' stroke-dasharray='3 2.5'/%3E%3Cpath d='M220,3 C190,20 148,65 100,125 C65,168 30,200 0,215' stroke-width='0.6' stroke-opacity='0.2'/%3E%3Cpath d='M195,30 C175,40 162,56 166,72 C170,84 184,86 190,74 C195,64 182,54 172,62' stroke-width='0.9' stroke-opacity='0.3'/%3E%3Cpath d='M110,125 C95,140 85,160 90,174 C94,185 106,184 110,172 C114,162 100,154 94,164' stroke-width='0.9' stroke-opacity='0.3'/%3E%3Ccircle cx='162' cy='42' r='5' stroke-width='0.7' stroke-opacity='0.35'/%3E%3Cpolygon points='162,34 164,39 169,42 164,45 162,50 160,45 155,42 160,39' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='55' cy='168' r='3.5' stroke-width='0.6' stroke-opacity='0.3'/%3E%3Cpolygon points='55,161 56.5,166 61.5,168 56.5,170 55,175 53.5,170 48.5,168 53.5,166' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='208' cy='18' r='2' fill='%23b8860b' fill-opacity='0.45'/%3E%3Ccircle cx='180' cy='62' r='1.8' fill='%23b8860b' fill-opacity='0.35'/%3E%3Ccircle cx='135' cy='112' r='2' fill='%23b8860b' fill-opacity='0.4'/%3E%3Ccircle cx='95' cy='152' r='1.8' fill='%23b8860b' fill-opacity='0.35'/%3E%3Ccircle cx='38' cy='192' r='2' fill='%23b8860b' fill-opacity='0.4'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: top right, bottom left;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 195px 195px, 195px 195px;
+}
+
+/* Grand Cenotaph Memorial Cartouche (High-Legibility Royal Names Plaque) */
+.memory-cenotaph-cartouche {
+  position: relative;
+  background: radial-gradient(ellipse at 50% 30%, #ffffff 0%, #fefcf7 55%, #f6edd9 100%);
+  border: 1.2px solid rgba(184, 134, 11, 0.45);
+  border-top: 2.5px solid #b8860b;
+  border-bottom: 2px solid #b8860b;
+  border-radius: 16px;
+  padding: 13px 8px;
+  box-shadow: 0 4px 16px rgba(184, 134, 11, 0.1), inset 0 1px 3px #ffffff;
+  margin: 0 auto 14px auto;
+  max-width: 380px;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.memory-cenotaph-cartouche::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px solid rgba(184, 134, 11, 0.22);
+  border-radius: 13px;
+  pointer-events: none;
+}
+
+.name-entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 0;
+  width: 100%;
+}
+
+.elder-name-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(11px, 2.9vw, 15px);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #241403;
+  line-height: 1.35;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.95);
+  white-space: nowrap;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+.cenotaph-sep {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 7px 0;
+  opacity: 0.85;
+}
+
+.cenotaph-line {
+  width: 55px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.6), transparent);
+}
+
+.cenotaph-rosette {
+  color: #b8860b;
+  font-size: 9px;
+}
+
+.memory-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  font-weight: 800;
+  color: #8c6020;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 10;
+}
+
+.memory-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: #633f0a;
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 10;
+}
+
+.memory-dua-prayer {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #3d2806;
+  max-width: 380px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.memory-jannah-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 3.5px 14px;
+  border-radius: 9999px;
+  background: rgba(184, 134, 11, 0.08);
+  border: 1px solid rgba(184, 134, 11, 0.25);
+  font-family: 'Cinzel', serif;
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: #7d4e0e;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 10;
+}
+
+/* ==========================================================================
+   CORDIAL HOST INVITATION CARD (350GSM LUXURY FOIL EDITION)
+   ========================================================================== */
+.cordial-invitation-card {
+  position: relative;
+  box-sizing: border-box;
+  background-color: #faf6ee;
+  background-image:
+    /* Directional Lighting Halo */
+    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.98) 0%, rgba(254, 251, 245, 0.94) 50%, rgba(247, 239, 224, 0.96) 100%),
+    /* Handmade Paper Cotton Fiber Stipple Layer 1 */
+    radial-gradient(circle at 50% 50%, rgba(184, 134, 11, 0.08) 0.65px, transparent 0.65px),
+    /* Handmade Paper Cotton Fiber Stipple Layer 2 */
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.85) 0.5px, transparent 0.5px),
+    /* Micro-Tactile Cardstock Fiber Grain via SVG Filter */
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperFibersCordial'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.62  0 0 0 0 0.48  0 0 0 0 0.28  0 0 0 0.055 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperFibersCordial)'/%3E%3C/svg%3E");
+  background-size: 100% 100%, 12px 12px, 8px 8px, 160px 160px;
+  background-position: 0 0, 0 0, 4px 4px, 0 0;
+  border: 1.5px solid rgba(184, 134, 11, 0.48);
+  border-radius: 24px;
+  padding: 24px 18px 22px 18px;
+  box-shadow: 0 12px 36px rgba(184, 134, 11, 0.12), 0 2px 8px rgba(60, 40, 10, 0.05), inset 0 1px 3px #ffffff;
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+  text-align: center;
+}
+
+.cordial-invitation-card::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(184, 134, 11, 0.22);
+  border-radius: 19px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Classical Royal Monogram & Laurel Leaf-Branch Flourish (Dual-Corner Flow) */
+.cordial-invitation-card::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23b8860b'%3E%3Cpath d='M220,12 C175,35 125,85 75,145 C45,180 20,205 0,220' stroke-width='1.1' stroke-opacity='0.28'/%3E%3Cpath d='M220,28 C180,55 135,102 90,158 C62,192 38,212 12,220' stroke-width='0.7' stroke-opacity='0.22' stroke-dasharray='3 2.5'/%3E%3Cpath d='M220,3 C190,20 148,65 100,125 C65,168 30,200 0,215' stroke-width='0.5' stroke-opacity='0.16'/%3E%3Cpath d='M195,30 C175,40 162,56 166,72 C170,84 184,86 190,74 C195,64 182,54 172,62' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cpath d='M110,125 C95,140 85,160 90,174 C94,185 106,184 110,172 C114,162 100,154 94,164' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cpath d='M145,85 C132,98 122,118 128,132 C133,142 144,140 148,130 C151,120 138,114 132,122' stroke-width='0.75' stroke-opacity='0.22'/%3E%3Ccircle cx='162' cy='42' r='5' stroke-width='0.6' stroke-opacity='0.28'/%3E%3Cpolygon points='162,34 164,39 169,42 164,45 162,50 160,45 155,42 160,39' fill='%23b8860b' fill-opacity='0.22'/%3E%3Cpolygon points='167,37 165,41 167,46 163,45 157,47 159,43 157,38 161,39' fill='%23b8860b' fill-opacity='0.15'/%3E%3Ccircle cx='55' cy='168' r='3.5' stroke-width='0.5' stroke-opacity='0.25'/%3E%3Cpolygon points='55,161 56.5,166 61.5,168 56.5,170 55,175 53.5,170 48.5,168 53.5,166' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='208' cy='18' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='180' cy='62' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='135' cy='112' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='95' cy='152' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='38' cy='192' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='12' cy='212' r='1.2' fill='%23b8860b' fill-opacity='0.22'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='rotate(180 110 110)' fill='none' stroke='%23b8860b'%3E%3Cpath d='M220,12 C175,35 125,85 75,145 C45,180 20,205 0,220' stroke-width='1.1' stroke-opacity='0.28'/%3E%3Cpath d='M220,28 C180,55 135,102 90,158 C62,192 38,212 12,220' stroke-width='0.7' stroke-opacity='0.22' stroke-dasharray='3 2.5'/%3E%3Cpath d='M220,3 C190,20 148,65 100,125 C65,168 30,200 0,215' stroke-width='0.5' stroke-opacity='0.16'/%3E%3Cpath d='M195,30 C175,40 162,56 166,72 C170,84 184,86 190,74 C195,64 182,54 172,62' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cpath d='M110,125 C95,140 85,160 90,174 C94,185 106,184 110,172 C114,162 100,154 94,164' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cpath d='M145,85 C132,98 122,118 128,132 C133,142 144,140 148,130 C151,120 138,114 132,122' stroke-width='0.75' stroke-opacity='0.22'/%3E%3Ccircle cx='162' cy='42' r='5' stroke-width='0.6' stroke-opacity='0.28'/%3E%3Cpolygon points='162,34 164,39 169,42 164,45 162,50 160,45 155,42 160,39' fill='%23b8860b' fill-opacity='0.22'/%3E%3Cpolygon points='167,37 165,41 167,46 163,45 157,47 159,43 157,38 161,39' fill='%23b8860b' fill-opacity='0.15'/%3E%3Ccircle cx='55' cy='168' r='3.5' stroke-width='0.5' stroke-opacity='0.25'/%3E%3Cpolygon points='55,161 56.5,166 61.5,168 56.5,170 55,175 53.5,170 48.5,168 53.5,166' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='208' cy='18' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='180' cy='62' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='135' cy='112' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='95' cy='152' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='38' cy='192' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='12' cy='212' r='1.2' fill='%23b8860b' fill-opacity='0.22'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: top right, bottom left;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 165px 165px, 165px 165px;
+}
+
+/* Compact One-Liner FIRM Cartouche */
+.cordial-firm-cartouche {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(253, 248, 238, 0.9) 100%);
+  border: 1px solid rgba(184, 134, 11, 0.35);
+  border-radius: 12px;
+  padding: 8px 18px 7px 18px;
+  box-shadow: 0 2px 6px rgba(184, 134, 11, 0.06), inset 0 1px 2px #ffffff;
+}
+
+.cordial-firm-cartouche .firm-kicker {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: #8c5812;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.cordial-firm-cartouche .firm-title {
+  font-family: 'Cinzel', serif;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #38240f;
+  line-height: 1.25;
+}
+
+/* Simplified Minimalist Contact Badges (Name + Call Button) */
+.royal-contact-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(253, 248, 238, 0.92) 100%);
+  border: 1px solid rgba(184, 134, 11, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(184, 134, 11, 0.05), inset 0 1px 1px #ffffff;
+  transition: all 0.2s ease;
+}
+
+.royal-contact-card:hover {
+  background: linear-gradient(135deg, #ffffff 0%, rgba(255, 252, 245, 0.98) 100%);
+  border-color: rgba(184, 134, 11, 0.55);
+  box-shadow: 0 3px 10px rgba(184, 134, 11, 0.1), inset 0 1px 1px #ffffff;
+  transform: translateY(-1px);
+}
+
+.royal-contact-name {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #2e1e12;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-royal-call-only {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #fdf8ed 0%, #f7ebcf 100%);
+  border: 1px solid rgba(184, 134, 11, 0.45);
+  color: #6d4107;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  box-shadow: 0 1px 4px rgba(184, 134, 11, 0.1), inset 0 1px 1px #ffffff;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.22s ease;
+}
+
+.btn-royal-call-only:hover {
+  background: linear-gradient(135deg, #fffcf5 0%, #f4e3be 100%);
+  border-color: rgba(184, 134, 11, 0.75);
+  box-shadow: 0 3px 8px rgba(184, 134, 11, 0.2);
+  transform: scale(1.04);
+  color: #4a2902;
+}
+
+.btn-royal-call-only svg {
+  width: 13px;
+  height: 13px;
+  color: #8c5812;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   THE ROYAL CLOSURE: ILLUMINATED ISLAMIC CREST & VALEDICTION FOLIO
+   ========================================================================== */
+.royal-closure-container {
+  position: relative;
+  margin-top: 36px;
+  text-align: center;
+}
+
+/* Illuminated Royal Islamic Header Cartouche / Crest */
+.royal-closure-header-emblem {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.emblem-arch-filigree {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(254, 250, 240, 0.95) 50%, rgba(248, 238, 218, 0.98) 100%);
+  border: 1.5px solid rgba(184, 134, 11, 0.45);
+  border-radius: 9999px;
+  padding: 6px 20px;
+  box-shadow: 0 4px 14px rgba(184, 134, 11, 0.12), inset 0 1px 2px #ffffff;
+}
+
+.emblem-arabic-text {
+  font-family: 'Amiri', 'Traditional Arabic', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #7d4e0e;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+  line-height: 1.2;
+}
+
+.emblem-flourish {
+  font-size: 10px;
+  color: #b8860b;
+}
+
+.emblem-subtext {
+  font-family: 'Cinzel', serif;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: #8c5812;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+/* Royal Closure Valediction Card */
+.royal-closure-valediction {
+  position: relative;
+  background-color: #faf6ee;
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.98) 0%, rgba(254, 250, 242, 0.94) 50%, rgba(246, 237, 220, 0.96) 100%),
+    radial-gradient(circle at 50% 50%, rgba(184, 134, 11, 0.08) 0.65px, transparent 0.65px),
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.85) 0.5px, transparent 0.5px),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperFibersValediction'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.62  0 0 0 0 0.48  0 0 0 0 0.28  0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperFibersValediction)'/%3E%3C/svg%3E");
+  background-size: 100% 100%, 12px 12px, 8px 8px, 160px 160px;
+  border: 1.5px solid rgba(184, 134, 11, 0.45);
+  border-radius: 22px;
+  padding: 22px 18px 20px 18px;
+  box-shadow: 0 10px 32px rgba(184, 134, 11, 0.11), 0 2px 8px rgba(60, 40, 10, 0.05), inset 0 1px 3px #ffffff;
+  overflow: hidden;
+  text-align: center;
+}
+
+.royal-closure-valediction::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(184, 134, 11, 0.2);
+  border-radius: 17px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Classical Royal Monogram & Laurel Leaf-Branch Flourish on Valediction Card */
+.royal-closure-valediction::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23b8860b'%3E%3Cpath d='M220,12 C175,35 125,85 75,145 C45,180 20,205 0,220' stroke-width='1.1' stroke-opacity='0.28'/%3E%3Cpath d='M220,28 C180,55 135,102 90,158 C62,192 38,212 12,220' stroke-width='0.7' stroke-opacity='0.22' stroke-dasharray='3 2.5'/%3E%3Cpath d='M220,3 C190,20 148,65 100,125 C65,168 30,200 0,215' stroke-width='0.5' stroke-opacity='0.16'/%3E%3Cpath d='M195,30 C175,40 162,56 166,72 C170,84 184,86 190,74 C195,64 182,54 172,62' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cpath d='M110,125 C95,140 85,160 90,174 C94,185 106,184 110,172 C114,162 100,154 94,164' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cpath d='M145,85 C132,98 122,118 128,132 C133,142 144,140 148,130 C151,120 138,114 132,122' stroke-width='0.75' stroke-opacity='0.22'/%3E%3Ccircle cx='162' cy='42' r='5' stroke-width='0.6' stroke-opacity='0.28'/%3E%3Cpolygon points='162,34 164,39 169,42 164,45 162,50 160,45 155,42 160,39' fill='%23b8860b' fill-opacity='0.22'/%3E%3Cpolygon points='167,37 165,41 167,46 163,45 157,47 159,43 157,38 161,39' fill='%23b8860b' fill-opacity='0.15'/%3E%3Ccircle cx='55' cy='168' r='3.5' stroke-width='0.5' stroke-opacity='0.25'/%3E%3Cpolygon points='55,161 56.5,166 61.5,168 56.5,170 55,175 53.5,170 48.5,168 53.5,166' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='208' cy='18' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='180' cy='62' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='135' cy='112' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='95' cy='152' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='38' cy='192' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='12' cy='212' r='1.2' fill='%23b8860b' fill-opacity='0.22'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='rotate(180 110 110)' fill='none' stroke='%23b8860b'%3E%3Cpath d='M220,12 C175,35 125,85 75,145 C45,180 20,205 0,220' stroke-width='1.1' stroke-opacity='0.28'/%3E%3Cpath d='M220,28 C180,55 135,102 90,158 C62,192 38,212 12,220' stroke-width='0.7' stroke-opacity='0.22' stroke-dasharray='3 2.5'/%3E%3Cpath d='M220,3 C190,20 148,65 100,125 C65,168 30,200 0,215' stroke-width='0.5' stroke-opacity='0.16'/%3E%3Cpath d='M195,30 C175,40 162,56 166,72 C170,84 184,86 190,74 C195,64 182,54 172,62' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cpath d='M110,125 C95,140 85,160 90,174 C94,185 106,184 110,172 C114,162 100,154 94,164' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cpath d='M145,85 C132,98 122,118 128,132 C133,142 144,140 148,130 C151,120 138,114 132,122' stroke-width='0.75' stroke-opacity='0.22'/%3E%3Ccircle cx='162' cy='42' r='5' stroke-width='0.6' stroke-opacity='0.28'/%3E%3Cpolygon points='162,34 164,39 169,42 164,45 162,50 160,45 155,42 160,39' fill='%23b8860b' fill-opacity='0.22'/%3E%3Cpolygon points='167,37 165,41 167,46 163,45 157,47 159,43 157,38 161,39' fill='%23b8860b' fill-opacity='0.15'/%3E%3Ccircle cx='55' cy='168' r='3.5' stroke-width='0.5' stroke-opacity='0.25'/%3E%3Cpolygon points='55,161 56.5,166 61.5,168 56.5,170 55,175 53.5,170 48.5,168 53.5,166' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='208' cy='18' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='180' cy='62' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='135' cy='112' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='95' cy='152' r='1.5' fill='%23b8860b' fill-opacity='0.25'/%3E%3Ccircle cx='38' cy='192' r='1.8' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='12' cy='212' r='1.2' fill='%23b8860b' fill-opacity='0.22'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: top right, bottom left;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 165px 165px, 165px 165px;
+}
+
+/* Bespoke Elevated "Return to Top" Button with Ring Chevron */
+.btn-royal-return-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #ffffff 0%, #fbf6ec 45%, #f6ebd5 100%);
+  border: 1.5px solid rgba(184, 134, 11, 0.5);
+  border-radius: 9999px;
+  padding: 8px 18px 8px 12px;
+  color: #5c3507;
+  box-shadow:
+    0 4px 14px rgba(184, 134, 11, 0.14),
+    0 1px 3px rgba(60, 40, 10, 0.08),
+    inset 0 1px 2px #ffffff;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
+}
+
+.return-top-chevron-ring {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(184, 134, 11, 0.12);
+  border: 1px solid rgba(184, 134, 11, 0.35);
+  color: #7d4e0e;
+  transition: transform 0.25s ease;
+}
+
+.btn-royal-return-top:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #faecd0 50%, #f2dcaf 100%);
+  border-color: rgba(184, 134, 11, 0.75);
+  box-shadow:
+    0 6px 20px rgba(184, 134, 11, 0.22),
+    0 2px 6px rgba(60, 40, 10, 0.12),
+    inset 0 1px 2px #ffffff;
+  transform: translateY(-2px);
+  color: #3b2002;
+}
+
+.btn-royal-return-top:hover .return-top-chevron-ring {
+  background: rgba(184, 134, 11, 0.22);
+  transform: translateY(-1px);
+}
+
+.btn-royal-return-top:active {
+  transform: scale(0.98);
+}
+
+/* ==========================================================================
+   PROPHETIC MARRIAGE SUPPLICATION LUXURY CARD (SUNNAH FOLIO EDITION)
+   ========================================================================== */
+.prophetic-supplication-card {
+  position: relative;
+  box-sizing: border-box;
+  background-color: #faf6ee;
+  background-image:
+    /* Directional Lighting Halo */
+    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.98) 0%, rgba(254, 251, 245, 0.94) 50%, rgba(247, 239, 224, 0.96) 100%),
+    /* Handmade Paper Cotton Fiber Stipple Layer 1 */
+    radial-gradient(circle at 50% 50%, rgba(184, 134, 11, 0.08) 0.65px, transparent 0.65px),
+    /* Handmade Paper Cotton Fiber Stipple Layer 2 */
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.85) 0.5px, transparent 0.5px),
+    /* Micro-Tactile Cardstock Fiber Grain via SVG Filter */
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperFibersProphetic'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.62  0 0 0 0 0.48  0 0 0 0 0.28  0 0 0 0.055 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperFibersProphetic)'/%3E%3C/svg%3E");
+  background-size: 100% 100%, 12px 12px, 8px 8px, 160px 160px;
+  background-position: 0 0, 0 0, 4px 4px, 0 0;
+  border: 1.5px solid rgba(184, 134, 11, 0.48);
+  border-radius: 26px;
+  padding: 24px 20px 22px 20px;
+  box-shadow: 0 12px 36px rgba(184, 134, 11, 0.12), 0 2px 8px rgba(60, 40, 10, 0.05), inset 0 1px 3px #ffffff;
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+  text-align: center;
+}
+
+.prophetic-supplication-card::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(184, 134, 11, 0.22);
+  border-radius: 21px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Dual-Corner Tazhib Arabesques */
+.prophetic-supplication-card::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23b8860b'%3E%3Cpath d='M220,12 C175,35 125,85 75,145 C45,180 20,205 0,220' stroke-width='1.2' stroke-opacity='0.35'/%3E%3Cpath d='M220,28 C180,55 135,102 90,158 C62,192 38,212 12,220' stroke-width='0.8' stroke-opacity='0.25' stroke-dasharray='3 2.5'/%3E%3Cpath d='M220,3 C190,20 148,65 100,125 C65,168 30,200 0,215' stroke-width='0.6' stroke-opacity='0.2'/%3E%3Cpath d='M195,30 C175,40 162,56 166,72 C170,84 184,86 190,74 C195,64 182,54 172,62' stroke-width='0.9' stroke-opacity='0.3'/%3E%3Cpath d='M110,125 C95,140 85,160 90,174 C94,185 106,184 110,172 C114,162 100,154 94,164' stroke-width='0.9' stroke-opacity='0.3'/%3E%3Ccircle cx='162' cy='42' r='5' stroke-width='0.7' stroke-opacity='0.35'/%3E%3Cpolygon points='162,34 164,39 169,42 164,45 162,50 160,45 155,42 160,39' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='55' cy='168' r='3.5' stroke-width='0.6' stroke-opacity='0.3'/%3E%3Cpolygon points='55,161 56.5,166 61.5,168 56.5,170 55,175 53.5,170 48.5,168 53.5,166' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='208' cy='18' r='2' fill='%23b8860b' fill-opacity='0.45'/%3E%3Ccircle cx='180' cy='62' r='1.8' fill='%23b8860b' fill-opacity='0.35'/%3E%3Ccircle cx='135' cy='112' r='2' fill='%23b8860b' fill-opacity='0.4'/%3E%3Ccircle cx='95' cy='152' r='1.8' fill='%23b8860b' fill-opacity='0.35'/%3E%3Ccircle cx='38' cy='192' r='2' fill='%23b8860b' fill-opacity='0.4'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='rotate(180 110 110)' fill='none' stroke='%23b8860b'%3E%3Cpath d='M220,12 C175,35 125,85 75,145 C45,180 20,205 0,220' stroke-width='1.2' stroke-opacity='0.35'/%3E%3Cpath d='M220,28 C180,55 135,102 90,158 C62,192 38,212 12,220' stroke-width='0.8' stroke-opacity='0.25' stroke-dasharray='3 2.5'/%3E%3Cpath d='M220,3 C190,20 148,65 100,125 C65,168 30,200 0,215' stroke-width='0.6' stroke-opacity='0.2'/%3E%3Cpath d='M195,30 C175,40 162,56 166,72 C170,84 184,86 190,74 C195,64 182,54 172,62' stroke-width='0.9' stroke-opacity='0.3'/%3E%3Cpath d='M110,125 C95,140 85,160 90,174 C94,185 106,184 110,172 C114,162 100,154 94,164' stroke-width='0.9' stroke-opacity='0.3'/%3E%3Ccircle cx='162' cy='42' r='5' stroke-width='0.7' stroke-opacity='0.35'/%3E%3Cpolygon points='162,34 164,39 169,42 164,45 162,50 160,45 155,42 160,39' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='55' cy='168' r='3.5' stroke-width='0.6' stroke-opacity='0.3'/%3E%3Cpolygon points='55,161 56.5,166 61.5,168 56.5,170 55,175 53.5,170 48.5,168 53.5,166' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='208' cy='18' r='2' fill='%23b8860b' fill-opacity='0.45'/%3E%3Ccircle cx='180' cy='62' r='1.8' fill='%23b8860b' fill-opacity='0.35'/%3E%3Ccircle cx='135' cy='112' r='2' fill='%23b8860b' fill-opacity='0.4'/%3E%3Ccircle cx='95' cy='152' r='1.8' fill='%23b8860b' fill-opacity='0.35'/%3E%3Ccircle cx='38' cy='192' r='2' fill='%23b8860b' fill-opacity='0.4'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: top right, bottom left;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 195px 195px, 195px 195px;
+}
+
+/* Header Elements */
+.prophetic-header-block {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.prophetic-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(184, 134, 11, 0.09);
+  border: 1px solid rgba(184, 134, 11, 0.28);
+  border-radius: 9999px;
+  padding: 3.5px 14px;
+}
+
+.prophetic-tag-text {
+  font-family: 'Cinzel', serif;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #7d4e0e;
+}
+
+.prophetic-card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #4a3410;
+  margin-top: 7px;
+  margin-bottom: 6px;
+}
+
+.prophetic-divider-axis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  max-width: 180px;
+  margin: 5px auto 2px auto;
+}
+
+.prophetic-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.55), transparent);
+}
+
+.prophetic-rosette {
+  font-size: 8.5px;
+  color: #b8860b;
+  opacity: 0.85;
+}
+
+/* Grand Illuminated Dua Cartouche */
+.prophetic-dua-cartouche {
+  position: relative;
+  background: radial-gradient(ellipse at 50% 30%, #ffffff 0%, #fefcf7 55%, #f6edd9 100%);
+  border: 1.5px solid rgba(184, 134, 11, 0.55);
+  border-top: 2.5px solid #b8860b;
+  border-bottom: 2.5px solid #b8860b;
+  border-radius: 18px;
+  padding: 16px 14px 16px 14px;
+  box-shadow: 0 6px 20px rgba(184, 134, 11, 0.12), inset 0 1px 3px #ffffff;
+  margin: 12px 0 14px 0;
+  z-index: 10;
+}
+
+.prophetic-dua-cartouche::before {
+  content: '';
+  position: absolute;
+  inset: 3.5px;
+  border: 1px dashed rgba(184, 134, 11, 0.32);
+  border-radius: 14px;
+  pointer-events: none;
+}
+
+.prophetic-arabic-script {
+  font-family: 'Amiri', 'Amiri Quran', 'Scheherazade New', serif;
+  font-size: 21.5px;
+  font-weight: 700;
+  line-height: 1.85;
+  color: #6b3e04;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9);
+  text-align: center;
+  margin: 0;
+  padding: 0 4px;
+  letter-spacing: normal;
+}
+
+@media (min-width: 640px) {
+  .prophetic-arabic-script {
+    font-size: 24px;
+  }
+}
+
+/* Translation & Reflection Block */
+.prophetic-translation-block {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.prophetic-translation-text {
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.65;
+  color: #352309;
+  max-width: 92%;
+  margin: 0 auto 12px auto;
+}
+
+@media (min-width: 640px) {
+  .prophetic-translation-text {
+    font-size: 16px;
+  }
+}
+
+/* Hadith Citation Axis & Badge */
+.prophetic-citation-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.citation-axis-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.35), transparent);
+}
+
+.prophetic-hadith-pill {
+  font-family: 'Cinzel', serif;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #7d4e0e;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(184, 134, 11, 0.32);
+  border-radius: 9999px;
+  padding: 3.5px 12px;
+  box-shadow: 0 2px 6px rgba(184, 134, 11, 0.08);
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   ROYAL BLESSINGS & RSVP LUXURY CARD (BESPOKE CHASSIS & FORMS v68.0)
+   ========================================================================== */
+.royal-rsvp-card {
+  position: relative;
+  box-sizing: border-box;
+  background-color: #faf6ee;
+  background-image:
+    /* Directional Lighting Halo */
+    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.98) 0%, rgba(254, 251, 245, 0.94) 50%, rgba(247, 239, 224, 0.96) 100%),
+    /* Handmade Paper Cotton Fiber Stipple Layer 1 */
+    radial-gradient(circle at 50% 50%, rgba(184, 134, 11, 0.08) 0.65px, transparent 0.65px),
+    /* Handmade Paper Cotton Fiber Stipple Layer 2 */
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.85) 0.5px, transparent 0.5px),
+    /* Micro-Tactile Cardstock Fiber Grain via SVG Filter */
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperFibersRsvp'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.62  0 0 0 0 0.48  0 0 0 0 0.28  0 0 0 0.055 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperFibersRsvp)'/%3E%3C/svg%3E");
+  background-size: 100% 100%, 12px 12px, 8px 8px, 160px 160px;
+  background-position: 0 0, 0 0, 4px 4px, 0 0;
+  border: 1.5px solid rgba(184, 134, 11, 0.48);
+  border-radius: 26px;
+  padding: 24px 20px 22px 20px;
+  box-shadow: 0 12px 36px rgba(184, 134, 11, 0.12), 0 2px 8px rgba(60, 40, 10, 0.05), inset 0 1px 3px #ffffff;
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+
+.royal-rsvp-card::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(184, 134, 11, 0.22);
+  border-radius: 21px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Dual-Corner Tazhib Arabesques */
+.royal-rsvp-card::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23b8860b'%3E%3Cpath d='M220,12 C175,35 125,85 75,145 C45,180 20,205 0,220' stroke-width='1.2' stroke-opacity='0.35'/%3E%3Cpath d='M220,28 C180,55 135,102 90,158 C62,192 38,212 12,220' stroke-width='0.8' stroke-opacity='0.25' stroke-dasharray='3 2.5'/%3E%3Cpath d='M220,3 C190,20 148,65 100,125 C65,168 30,200 0,215' stroke-width='0.6' stroke-opacity='0.2'/%3E%3Cpath d='M195,30 C175,40 162,56 166,72 C170,84 184,86 190,74 C195,64 182,54 172,62' stroke-width='0.9' stroke-opacity='0.3'/%3E%3Cpath d='M110,125 C95,140 85,160 90,174 C94,185 106,184 110,172 C114,162 100,154 94,164' stroke-width='0.9' stroke-opacity='0.3'/%3E%3Ccircle cx='162' cy='42' r='5' stroke-width='0.7' stroke-opacity='0.35'/%3E%3Cpolygon points='162,34 164,39 169,42 164,45 162,50 160,45 155,42 160,39' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='55' cy='168' r='3.5' stroke-width='0.6' stroke-opacity='0.3'/%3E%3Cpolygon points='55,161 56.5,166 61.5,168 56.5,170 55,175 53.5,170 48.5,168 53.5,166' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='208' cy='18' r='2' fill='%23b8860b' fill-opacity='0.45'/%3E%3Ccircle cx='180' cy='62' r='1.8' fill='%23b8860b' fill-opacity='0.35'/%3E%3Ccircle cx='135' cy='112' r='2' fill='%23b8860b' fill-opacity='0.4'/%3E%3Ccircle cx='95' cy='152' r='1.8' fill='%23b8860b' fill-opacity='0.35'/%3E%3Ccircle cx='38' cy='192' r='2' fill='%23b8860b' fill-opacity='0.4'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='rotate(180 110 110)' fill='none' stroke='%23b8860b'%3E%3Cpath d='M220,12 C175,35 125,85 75,145 C45,180 20,205 0,220' stroke-width='1.2' stroke-opacity='0.35'/%3E%3Cpath d='M220,28 C180,55 135,102 90,158 C62,192 38,212 12,220' stroke-width='0.8' stroke-opacity='0.25' stroke-dasharray='3 2.5'/%3E%3Cpath d='M220,3 C190,20 148,65 100,125 C65,168 30,200 0,215' stroke-width='0.6' stroke-opacity='0.2'/%3E%3Cpath d='M195,30 C175,40 162,56 166,72 C170,84 184,86 190,74 C195,64 182,54 172,62' stroke-width='0.9' stroke-opacity='0.3'/%3E%3Cpath d='M110,125 C95,140 85,160 90,174 C94,185 106,184 110,172 C114,162 100,154 94,164' stroke-width='0.9' stroke-opacity='0.3'/%3E%3Ccircle cx='162' cy='42' r='5' stroke-width='0.7' stroke-opacity='0.35'/%3E%3Cpolygon points='162,34 164,39 169,42 164,45 162,50 160,45 155,42 160,39' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='55' cy='168' r='3.5' stroke-width='0.6' stroke-opacity='0.3'/%3E%3Cpolygon points='55,161 56.5,166 61.5,168 56.5,170 55,175 53.5,170 48.5,168 53.5,166' fill='%23b8860b' fill-opacity='0.3'/%3E%3Ccircle cx='208' cy='18' r='2' fill='%23b8860b' fill-opacity='0.45'/%3E%3Ccircle cx='180' cy='62' r='1.8' fill='%23b8860b' fill-opacity='0.35'/%3E%3Ccircle cx='135' cy='112' r='2' fill='%23b8860b' fill-opacity='0.4'/%3E%3Ccircle cx='95' cy='152' r='1.8' fill='%23b8860b' fill-opacity='0.35'/%3E%3Ccircle cx='38' cy='192' r='2' fill='%23b8860b' fill-opacity='0.4'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: top right, bottom left;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 195px 195px, 195px 195px;
+}
+
+/* RSVP Header Block */
+.rsvp-header-block {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.rsvp-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(184, 134, 11, 0.09);
+  border: 1px solid rgba(184, 134, 11, 0.28);
+  border-radius: 9999px;
+  padding: 3.5px 14px;
+}
+
+.rsvp-tag-text {
+  font-family: 'Cinzel', serif;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #7d4e0e;
+}
+
+.rsvp-card-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.1rem, 6.2vw, 2.5rem);
+  color: #8a6414;
+  line-height: 1.15;
+  margin: 6px 0 3px 0;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.rsvp-divider-axis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-width: 260px;
+  margin: 4px auto 7px auto;
+}
+
+.rsvp-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.55), rgba(184, 134, 11, 0.15));
+}
+
+.rsvp-line:last-child {
+  background: linear-gradient(90deg, rgba(184, 134, 11, 0.15), rgba(184, 134, 11, 0.55), transparent);
+}
+
+.rsvp-rosette {
+  font-size: 8.5px;
+  color: #b8860b;
+  opacity: 0.85;
+}
+
+.rsvp-rosette-text {
+  font-family: 'Cinzel', serif;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: #8a6414;
+  text-transform: uppercase;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9);
+}
+
+.rsvp-rosette-glyph {
+  font-size: 8px;
+  color: #b8860b;
+  opacity: 0.85;
+}
+
+.rsvp-subtitle {
+  font-family: 'Cinzel', serif;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #704d16;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* Luxury Form Controls */
+.rsvp-field-group {
+  position: relative;
+}
+
+.rsvp-field-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Cinzel', serif;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6d4b14;
+  margin-bottom: 5px;
+  padding: 0 2px;
+}
+
+.rsvp-input-wrapper {
+  position: relative;
+}
+
+.rsvp-luxury-input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 44px;
+  background: linear-gradient(180deg, #ffffff 0%, #fefcf9 100%);
+  border: 1.2px solid rgba(184, 134, 11, 0.38) !important;
+  border-radius: 12px !important;
+  color: #2b1f13 !important;
+  padding: 10px 14px !important;
+  font-size: 14.5px !important;
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-weight: 600 !important;
+  outline: none !important;
+  box-shadow: inset 0 1px 3px rgba(184, 134, 11, 0.05), 0 1px 2px rgba(0, 0, 0, 0.02);
+  transition: all 0.22s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.rsvp-luxury-input:focus {
+  border-color: #b8860b !important;
+  box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.16), inset 0 1px 2px #ffffff !important;
+  background: #ffffff !important;
+}
+
+.rsvp-luxury-input::placeholder {
+  color: rgba(120, 95, 60, 0.45) !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+}
+
+/* Custom Styled Select with Gold Chevron */
+.rsvp-select {
+  padding-right: 34px !important;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='%23b8860b' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 12px center !important;
+  background-size: 13px 13px !important;
+}
+
+/* Textarea Specifics */
+.rsvp-textarea {
+  height: auto !important;
+  min-height: 74px !important;
+  resize: none !important;
+  line-height: 1.5 !important;
+  padding: 10px 14px !important;
+}
+
+/* Luxury 3-Column Prayer Selection Grid */
+.rsvp-dua-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+}
+
+.rsvp-dua-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 4px 7px 4px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(252, 247, 237, 0.92) 100%);
+  border: 1px solid rgba(184, 134, 11, 0.32);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 4px rgba(184, 134, 11, 0.08), inset 0 1px 1px #ffffff;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.rsvp-dua-card:hover {
+  border-color: rgba(184, 134, 11, 0.65);
+  background: linear-gradient(135deg, #ffffff 0%, #faefd6 100%);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 10px rgba(184, 134, 11, 0.18), inset 0 1px 1px #ffffff;
+}
+
+.rsvp-dua-card:active,
+.rsvp-dua-card.is-active {
+  background: linear-gradient(135deg, #fffcf5 0%, #faeecd 100%);
+  border-color: #b8860b;
+  box-shadow: 0 0 0 1.5px rgba(184, 134, 11, 0.4), 0 2px 6px rgba(184, 134, 11, 0.2);
+  transform: scale(0.98);
+}
+
+.dua-card-icon {
+  font-size: 13px;
+  line-height: 1;
+  margin-bottom: 3px;
+  filter: drop-shadow(0 1px 2px rgba(184, 134, 11, 0.2));
+}
+
+.dua-card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #724c0e;
+  text-transform: uppercase;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.dua-card-sub {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 9.5px;
+  color: #8c7355;
+  line-height: 1.1;
+  margin-top: 1.5px;
+  white-space: nowrap;
+}
+
+/* Fallback Sunnah Chips Container */
+.rsvp-chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+.rsvp-dua-chip {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(253, 248, 238, 0.92) 100%);
+  border: 1px solid rgba(184, 134, 11, 0.32);
+  border-radius: 9999px;
+  padding: 4px 10px;
+  font-family: 'Cinzel', serif;
+  font-size: 8px;
+  font-weight: 700;
+  color: #724c0e;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(184, 134, 11, 0.08);
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.rsvp-dua-chip:hover {
+  border-color: rgba(184, 134, 11, 0.65);
+  background: linear-gradient(135deg, #ffffff 0%, #faefd6 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(184, 134, 11, 0.16);
+}
+
+.rsvp-dua-chip:active,
+.rsvp-dua-chip.is-active {
+  background: linear-gradient(135deg, #fffcf5 0%, #faeecd 100%);
+  border-color: #b8860b;
+  transform: scale(0.97);
+}
+
+/* Royal Ivory & Gold Foil WhatsApp Submit Button (Harmonized with Calendar & Venue Actions) */
+.rsvp-submit-btn {
+  width: 100%;
+  height: 48px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(253, 246, 232, 0.95) 100%);
+  color: #382004;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 11px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8.5px;
+  border: 1.5px solid rgba(184, 134, 11, 0.45);
+  box-shadow: 0 4px 14px rgba(184, 134, 11, 0.10), inset 0 1px 2px #ffffff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-top: 10px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.rsvp-submit-btn:hover {
+  border-color: rgba(184, 134, 11, 0.75);
+  background: linear-gradient(135deg, #ffffff 0%, #faecd0 50%, #f5db99 100%);
+  box-shadow: 0 6px 22px rgba(184, 134, 11, 0.22), inset 0 1px 2px #ffffff;
+  transform: translateY(-1px);
+  color: #2a1602;
+}
+
+.rsvp-submit-btn:active {
+  transform: scale(0.985);
+  box-shadow: 0 2px 8px rgba(184, 134, 11, 0.12);
+}
+
+.rsvp-submit-btn svg {
+  width: 20px;
+  height: 20px;
+  color: #b8860b;
+  flex-shrink: 0;
+  filter: drop-shadow(0 1px 1px rgba(184, 134, 11, 0.2));
+}
