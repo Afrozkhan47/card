@@ -505,29 +505,16 @@ function smoothScrollToRsvp(e) {
 window.smoothScrollToRsvp = smoothScrollToRsvp;
 
 /**
- * Initializes the Day-of-Event Floating Quick Dock scroll tracking.
- * Automatically slides the dock into view once the guest scrolls past the hero viewport.
+ * Initializes the Day-of-Event Floating Quick Dock.
+ * Ensures the dock remains persistently visible across all viewports
+ * so guests have immediate access to Venue Map, RSVP, and Royal Share at any moment.
  *
  * @returns {void}
  */
 function initQuickDock() {
   const quickDock = document.getElementById('quickDock');
   if (!quickDock) return;
-
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        if (window.scrollY > 380) {
-          quickDock.classList.add('is-visible');
-        } else {
-          quickDock.classList.remove('is-visible');
-        }
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
+  quickDock.classList.add('is-visible');
 }
 window.initQuickDock = initQuickDock;
 
