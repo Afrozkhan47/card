@@ -487,3 +487,132 @@ function initDignitaryInteractions() {
   });
 }
 window.initDignitaryInteractions = initDignitaryInteractions;
+
+// 11. Day-of-Event Floating Quick Dock Controller
+/**
+ * Smoothly scrolls the guest viewport to the RSVP and Blessings Section.
+ *
+ * @param {Event} [e] - Optional click event to prevent default hash jumping
+ * @returns {void}
+ */
+function smoothScrollToRsvp(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  const rsvpSec = document.getElementById('rsvpSection');
+  if (rsvpSec) {
+    rsvpSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+window.smoothScrollToRsvp = smoothScrollToRsvp;
+
+/**
+ * Initializes the Day-of-Event Floating Quick Dock scroll tracking.
+ * Automatically slides the dock into view once the guest scrolls past the hero viewport.
+ *
+ * @returns {void}
+ */
+function initQuickDock() {
+  const quickDock = document.getElementById('quickDock');
+  if (!quickDock) return;
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        if (window.scrollY > 380) {
+          quickDock.classList.add('is-visible');
+        } else {
+          quickDock.classList.remove('is-visible');
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+}
+window.initQuickDock = initQuickDock;
+
+// 12. Royal Share Modal & Social Previews Controller
+/**
+ * Opens the Royal Share modal presenting link copy, WhatsApp dispatch, and card downloads.
+ *
+ * @returns {void}
+ */
+function openShareModal() {
+  const modal = document.getElementById('shareModal');
+  if (modal) {
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+}
+window.openShareModal = openShareModal;
+
+/**
+ * Closes the Royal Share modal and restores body scrolling.
+ *
+ * @returns {void}
+ */
+function closeShareModal() {
+  const modal = document.getElementById('shareModal');
+  if (modal) {
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+}
+window.closeShareModal = closeShareModal;
+
+/**
+ * Handles modal backdrop overlay clicks to dismiss the dialog gracefully.
+ *
+ * @param {MouseEvent} e - Mouse click event
+ * @returns {void}
+ */
+function handleShareOverlayClick(e) {
+  if (e.target && e.target.id === 'shareModal') {
+    closeShareModal();
+  }
+}
+window.handleShareOverlayClick = handleShareOverlayClick;
+
+/**
+ * Launches WhatsApp with pre-filled royal invitation message and live link.
+ *
+ * @returns {void}
+ */
+function shareViaWhatsApp() {
+  const shareText = "Royal Islamic Wedding Invitation\nKhan & Zarekari Families cordially invite you to celebrate the Nikah Ceremony of Mahek & Aman on Sunday, 27th Dec 2026 at Govind Garden, Pune.\n\nView the royal wedding scroll:\nhttps://mahekweddingcard.vercel.app/";
+  const url = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+  window.open(url, '_blank', 'noopener,noreferrer');
+}
+window.shareViaWhatsApp = shareViaWhatsApp;
+
+/**
+ * Copies the primary wedding website URL to the user's system clipboard with feedback.
+ *
+ * @returns {Promise<void>}
+ */
+async function copyShareLink() {
+  const shareUrl = "https://mahekweddingcard.vercel.app/";
+  try {
+    await navigator.clipboard.writeText(shareUrl);
+    const btnText = document.getElementById('copyLinkBtnText');
+    if (btnText) {
+      const orig = btnText.innerText;
+      btnText.innerText = "COPIED!";
+      setTimeout(() => { btnText.innerText = orig; }, 2000);
+    }
+    const toast = document.getElementById('toastNotification');
+    if (toast) {
+      toast.innerText = "Invitation Link Copied!";
+      toast.style.opacity = '1';
+      setTimeout(() => { toast.style.opacity = '0'; }, 2200);
+    }
+  } catch (err) {
+    prompt("Copy wedding invitation link:", shareUrl);
+  }
+}
+window.copyShareLink = copyShareLink;
+
+// Run initializers on DOM load
+document.addEventListener('DOMContentLoaded', () => {
+  initQuickDock();
+});

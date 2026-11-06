@@ -54,6 +54,19 @@
       text-rendering: optimizeLegibility;
     }
 
+    .arabic-dua-banner {
+      font-family: 'Amiri', 'Amiri Quran', 'Scheherazade New', serif;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.8;
+      color: #3b2002;
+      text-shadow: 0 1px 1px rgba(255, 255, 255, 0.95);
+      margin-bottom: 6px;
+      position: relative;
+      z-index: 10;
+      text-align: center;
+    }
+
     /* Ambient Continuous Royal Ivory & Arabesque Tapestry Container (Continuous Wedding BG) */
     .regal-scroll-container {
       position: relative;
@@ -1009,9 +1022,9 @@
 
 .pod-label {
   font-family: 'Cinzel', serif;
-  font-size: 7.5px;
-  font-weight: 700;
-  color: #8a6414;
+  font-size: 8.5px;
+  font-weight: 800;
+  color: #3d2003;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   margin-top: 4px;
@@ -1125,15 +1138,15 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  background: linear-gradient(135deg, rgba(254, 243, 199, 0.75) 0%, rgba(251, 226, 150, 0.85) 50%, rgba(254, 243, 199, 0.75) 100%);
-  border: 1px solid rgba(184, 134, 11, 0.45);
+  background: linear-gradient(135deg, rgba(254, 243, 199, 0.85) 0%, rgba(251, 226, 150, 0.95) 50%, rgba(254, 243, 199, 0.85) 100%);
+  border: 1px solid rgba(184, 134, 11, 0.5);
   border-radius: 9999px;
   padding: 3px 10px;
-  box-shadow: 0 1px 4px rgba(184, 134, 11, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  box-shadow: 0 1px 4px rgba(184, 134, 11, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.95);
   font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 700;
-  font-size: 11px;
-  color: #382004;
+  font-weight: 800;
+  font-size: 11.5px;
+  color: #150801;
   letter-spacing: 0.04em;
   white-space: nowrap;
 }
@@ -1201,12 +1214,12 @@
 
 /* Arabic Calligraphy Accent Badge */
 .itinerary-arabic-badge {
-  font-family: 'Amiri', 'Amiri Quran', Georgia, serif;
-  font-size: 15px;
+  font-family: 'Amiri', 'Amiri Quran', 'Scheherazade New', serif;
+  font-size: 16px;
   font-weight: 700;
-  color: #6e4e08;
+  color: #3b2002;
   letter-spacing: 0.02em;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.95);
   line-height: 1.2;
   display: inline-block;
 }
@@ -1307,12 +1320,12 @@
   margin-top: 12px;
   padding: 4px 12px;
   border-radius: 9999px;
-  background: rgba(184, 134, 11, 0.06);
-  border: 1px solid rgba(184, 134, 11, 0.2);
+  background: rgba(184, 134, 11, 0.08);
+  border: 1px solid rgba(184, 134, 11, 0.28);
   font-family: 'Cinzel', serif;
-  font-size: 9px;
-  font-weight: 700;
-  color: #6e4e08;
+  font-size: 9.5px;
+  font-weight: 800;
+  color: #381e02;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -1337,10 +1350,10 @@
 /* Primary Action: Open in Google Maps - Elevated Golden Royal Pill */
 .btn-venue-maps {
   background: linear-gradient(135deg, #fef4dc 0%, #f7dc96 48%, #e4b855 100%);
-  color: #452402;
+  color: #2b1401;
   font-family: 'Cinzel', serif;
-  font-size: 9.5px;
-  font-weight: 700;
+  font-size: 10px;
+  font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 9px 6px;
@@ -1351,8 +1364,8 @@
   gap: 5px;
   width: 100%;
   min-width: 0;
-  border: 1px solid rgba(184, 134, 11, 0.55);
-  box-shadow: 0 3px 10px rgba(184, 134, 11, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(184, 134, 11, 0.65);
+  box-shadow: 0 3px 10px rgba(184, 134, 11, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.95);
   text-decoration: none;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -1380,10 +1393,10 @@
 /* Secondary Action: Copy Venue Address - Delicate Ivory Cardstock Pill */
 .btn-venue-copy {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(254, 250, 242, 0.94) 100%);
-  color: #4a2903;
+  color: #1a0a01;
   font-family: 'Cinzel', serif;
-  font-size: 9.5px;
-  font-weight: 700;
+  font-size: 10px;
+  font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 9px 6px;
@@ -1394,7 +1407,7 @@
   gap: 5px;
   width: 100%;
   min-width: 0;
-  border: 1px solid rgba(184, 134, 11, 0.35);
+  border: 1px solid rgba(184, 134, 11, 0.45);
   box-shadow: 0 2px 8px rgba(120, 53, 15, 0.05), inset 0 1px 1px #ffffff;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -1471,10 +1484,10 @@
 
 .card-header-tag {
   font-family: 'Cinzel', serif;
-  font-size: 8.5px;
-  font-weight: 700;
+  font-size: 9px;
+  font-weight: 800;
   letter-spacing: 0.22em;
-  color: #8a6414;
+  color: #4a2802;
   text-transform: uppercase;
   display: block;
   margin-bottom: 2px;
@@ -1890,14 +1903,14 @@
 
 /* Sacred Arabic Inscription for Extended Family */
 .arabic-compliments-dua {
-  font-family: 'Amiri', 'Traditional Arabic', serif;
-  font-size: 20px;
+  font-family: 'Amiri', 'Amiri Quran', 'Scheherazade New', serif;
+  font-size: 22px;
   font-weight: 700;
-  color: #7d4e0e;
+  color: #3b2002;
   margin: 6px 0 4px 0;
-  line-height: 1.5;
+  line-height: 1.8;
   letter-spacing: 0.04em;
-  text-shadow: 0 1px 2px rgba(184, 134, 11, 0.2);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.95);
 }
 
 /* In Cherished Memory Tribute Card (Royal Memorial Chassis) */
@@ -2032,7 +2045,7 @@
   font-family: 'Cinzel', serif;
   font-size: 9.5px;
   font-weight: 800;
-  color: #5c3505;
+  color: #4a2902;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   margin-bottom: 6px;
@@ -2072,13 +2085,13 @@
   margin-top: 10px;
   padding: 3.5px 14px;
   border-radius: 9999px;
-  background: rgba(184, 134, 11, 0.08);
-  border: 1px solid rgba(184, 134, 11, 0.25);
+  background: rgba(184, 134, 11, 0.1);
+  border: 1px solid rgba(184, 134, 11, 0.35);
   font-family: 'Cinzel', serif;
-  font-size: 8.5px;
+  font-size: 9px;
   font-weight: 800;
-  letter-spacing: 0.18em;
-  color: #7d4e0e;
+  letter-spacing: 0.2em;
+  color: #3b1f02;
   text-transform: uppercase;
   position: relative;
   z-index: 10;
@@ -2150,20 +2163,20 @@
 .cordial-firm-cartouche .firm-kicker {
   display: block;
   font-family: 'Cinzel', serif;
-  font-size: 8px;
+  font-size: 8.5px;
   font-weight: 800;
   letter-spacing: 0.22em;
-  color: #8c5812;
+  color: #4a2c04;
   text-transform: uppercase;
   margin-bottom: 2px;
 }
 
 .cordial-firm-cartouche .firm-title {
   font-family: 'Cinzel', serif;
-  font-size: 12.5px;
+  font-size: 13.5px;
   font-weight: 800;
   letter-spacing: 0.08em;
-  color: #38240f;
+  color: #150801;
   line-height: 1.25;
 }
 
@@ -2189,10 +2202,10 @@
 
 .royal-contact-name {
   font-family: 'Cinzel', serif;
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 800;
   letter-spacing: 0.04em;
-  color: #2e1e12;
+  color: #150901;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -2207,14 +2220,14 @@
   padding: 6px 14px;
   border-radius: 9999px;
   background: linear-gradient(135deg, #fdf8ed 0%, #f7ebcf 100%);
-  border: 1px solid rgba(184, 134, 11, 0.45);
-  color: #6d4107;
+  border: 1px solid rgba(184, 134, 11, 0.55);
+  color: #241302;
   font-family: 'Cinzel', serif;
-  font-size: 10px;
-  font-weight: 700;
+  font-size: 10.5px;
+  font-weight: 800;
   letter-spacing: 0.12em;
   text-decoration: none;
-  box-shadow: 0 1px 4px rgba(184, 134, 11, 0.1), inset 0 1px 1px #ffffff;
+  box-shadow: 0 1px 4px rgba(184, 134, 11, 0.12), inset 0 1px 1px #ffffff;
   white-space: nowrap;
   flex-shrink: 0;
   transition: all 0.22s ease;
@@ -2264,11 +2277,11 @@
 }
 
 .emblem-arabic-text {
-  font-family: 'Amiri', 'Traditional Arabic', serif;
-  font-size: 18px;
+  font-family: 'Amiri', 'Amiri Quran', 'Scheherazade New', serif;
+  font-size: 20px;
   font-weight: 700;
-  color: #7d4e0e;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+  color: #3b2002;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.95);
   line-height: 1.2;
 }
 
@@ -2279,10 +2292,10 @@
 
 .emblem-subtext {
   font-family: 'Cinzel', serif;
-  font-size: 8px;
+  font-size: 8.5px;
   font-weight: 800;
   letter-spacing: 0.22em;
-  color: #8c5812;
+  color: #4a2802;
   text-transform: uppercase;
   margin-top: 5px;
 }
@@ -2453,20 +2466,20 @@
 
 .prophetic-tag-text {
   font-family: 'Cinzel', serif;
-  font-size: 8.5px;
-  font-weight: 700;
+  font-size: 9px;
+  font-weight: 800;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #7d4e0e;
+  color: #4a2802;
 }
 
 .prophetic-card-title {
   font-family: 'Cinzel', serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #4a3410;
+  color: #150902;
   margin-top: 7px;
   margin-bottom: 6px;
 }
@@ -2517,11 +2530,11 @@
 
 .prophetic-arabic-script {
   font-family: 'Amiri', 'Amiri Quran', 'Scheherazade New', serif;
-  font-size: 21.5px;
+  font-size: 22.5px;
   font-weight: 700;
   line-height: 1.85;
-  color: #6b3e04;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9);
+  color: #3b1e02;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.95);
   text-align: center;
   margin: 0;
   padding: 0 4px;
@@ -2659,20 +2672,20 @@
 
 .rsvp-tag-text {
   font-family: 'Cinzel', serif;
-  font-size: 8.5px;
-  font-weight: 700;
+  font-size: 9px;
+  font-weight: 800;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #7d4e0e;
+  color: #4a2802;
 }
 
 .rsvp-card-title {
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(2.1rem, 6.2vw, 2.5rem);
-  color: #8a6414;
+  font-size: clamp(2.2rem, 6.5vw, 2.6rem);
+  color: #4a2802;
   line-height: 1.15;
   margin: 6px 0 3px 0;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.95);
 }
 
 .rsvp-divider-axis {
@@ -2703,15 +2716,15 @@
 .rsvp-rosette-text {
   font-family: 'Cinzel', serif;
   font-size: 9.5px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.28em;
-  color: #8a6414;
+  color: #4a2803;
   text-transform: uppercase;
   white-space: nowrap;
   display: flex;
   align-items: center;
   gap: 6px;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.95);
 }
 
 .rsvp-rosette-glyph {
@@ -2741,11 +2754,11 @@
   align-items: center;
   justify-content: space-between;
   font-family: 'Cinzel', serif;
-  font-size: 8.5px;
-  font-weight: 700;
+  font-size: 9.5px;
+  font-weight: 800;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #6d4b14;
+  color: #381e04;
   margin-bottom: 5px;
   padding: 0 2px;
 }
@@ -2851,10 +2864,10 @@
 
 .dua-card-title {
   font-family: 'Cinzel', serif;
-  font-size: 8.5px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: #724c0e;
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #2b1702;
   text-transform: uppercase;
   line-height: 1.15;
   white-space: nowrap;
@@ -2863,10 +2876,11 @@
 .dua-card-sub {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-style: italic;
-  font-size: 9.5px;
-  color: #8c7355;
+  font-weight: 600;
+  font-size: 11px;
+  color: #381f03;
   line-height: 1.1;
-  margin-top: 1.5px;
+  margin-top: 2px;
   white-space: nowrap;
 }
 
@@ -2952,4 +2966,244 @@
   color: #b8860b;
   flex-shrink: 0;
   filter: drop-shadow(0 1px 1px rgba(184, 134, 11, 0.2));
+}
+
+/* ==========================================================================
+   DAY-OF-EVENT FLOATING QUICK DOCK (Glassmorphic Venue, RSVP & Share)
+   ========================================================================== */
+.royal-quick-dock {
+  position: fixed;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  left: 50%;
+  transform: translateX(-50%) translateY(40px);
+  z-index: 60;
+  background: rgba(255, 253, 248, 0.94);
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(253, 247, 235, 0.92) 100%);
+  border: 1.5px solid rgba(184, 134, 11, 0.45);
+  box-shadow: 0 10px 36px rgba(184, 134, 11, 0.22), 0 3px 10px rgba(60, 40, 10, 0.1), inset 0 1px 2px #ffffff;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 9999px;
+  padding: 5px 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  max-width: 94vw;
+  white-space: nowrap;
+}
+
+.royal-quick-dock.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dock-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 12px;
+  border-radius: 9999px;
+  font-family: 'Cinzel', serif;
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.dock-btn-venue {
+  background: linear-gradient(135deg, #fef4dc 0%, #f7dc96 50%, #e4b855 100%);
+  color: #2b1401;
+  border-color: rgba(184, 134, 11, 0.6);
+  box-shadow: 0 2px 8px rgba(184, 134, 11, 0.18), inset 0 1px 1px #ffffff;
+}
+
+.dock-btn-venue:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #fff9e8 0%, #fae2a8 50%, #edc263 100%);
+}
+
+.dock-btn-rsvp {
+  background: rgba(255, 255, 255, 0.92);
+  color: #1a0a01;
+  border-color: rgba(184, 134, 11, 0.35);
+  box-shadow: 0 1px 4px rgba(184, 134, 11, 0.1), inset 0 1px 1px #ffffff;
+}
+
+.dock-btn-rsvp:hover {
+  background: #ffffff;
+  border-color: rgba(184, 134, 11, 0.6);
+}
+
+.dock-btn-share {
+  background: rgba(254, 246, 230, 0.7);
+  color: #3b2002;
+  border: 1px solid rgba(184, 134, 11, 0.28);
+  padding: 7px 10px;
+}
+
+.dock-btn-share:hover {
+  background: rgba(254, 246, 230, 0.95);
+  border-color: rgba(184, 134, 11, 0.55);
+}
+
+.dock-divider {
+  width: 1px;
+  height: 16px;
+  background: linear-gradient(180deg, transparent, rgba(184, 134, 11, 0.4), transparent);
+}
+
+.dock-btn-icon {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   ROYAL SHARE MODAL (Instagram, WhatsApp, Direct Links & Card Downloads)
+   ========================================================================== */
+.share-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(20, 12, 5, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.share-modal-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.share-modal-card {
+  width: 100%;
+  max-width: 440px;
+  background: #faf6ee;
+  background-image: radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.98) 0%, rgba(253, 246, 232, 0.94) 100%);
+  border: 1.5px solid rgba(184, 134, 11, 0.5);
+  border-radius: 24px;
+  padding: 22px 18px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25), inset 0 1px 3px #ffffff;
+  position: relative;
+  transform: scale(0.95);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  text-align: center;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.share-modal-overlay.is-open .share-modal-card {
+  transform: scale(1);
+}
+
+.share-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(184, 134, 11, 0.1);
+  border: 1px solid rgba(184, 134, 11, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3b2002;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.share-preview-thumb {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(184, 134, 11, 0.35);
+  box-shadow: 0 4px 14px rgba(184, 134, 11, 0.15);
+  margin: 12px 0 16px 0;
+}
+
+.share-actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.btn-share-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: 9999px;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.btn-share-whatsapp {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #ffffff;
+  border: 1px solid #128c7e;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.25);
+}
+
+.btn-share-copy {
+  background: linear-gradient(135deg, #fef4dc 0%, #f7dc96 50%, #e4b855 100%);
+  color: #2b1401;
+  border: 1px solid rgba(184, 134, 11, 0.55);
+  box-shadow: 0 2px 8px rgba(184, 134, 11, 0.15);
+}
+
+.share-downloads-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(184, 134, 11, 0.2);
+  margin-top: 10px;
+}
+
+.btn-share-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Cinzel', serif;
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #4a2802;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 9999px;
+  background: rgba(184, 134, 11, 0.08);
+  border: 1px solid rgba(184, 134, 11, 0.25);
+  transition: all 0.2s ease;
+}
+
+.btn-share-download:hover {
+  background: rgba(184, 134, 11, 0.16);
+  border-color: rgba(184, 134, 11, 0.5);
 }
