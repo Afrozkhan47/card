@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.reveal-on-scroll').forEach(el => {
         el.classList.add('is-revealed');
       });
-      document.title = "Mahek & Aman — Royal Islamic Wedding Scroll";
+      document.title = "Mahek & Aman — Wedding Invitation";
     }
   }
 
@@ -247,7 +247,7 @@ function downloadWeddingIcs() {
     'DTSTAMP:20261227T000000Z',
     'DTSTART:20261227T060000Z',
     'DTEND:20261227T100000Z',
-    'SUMMARY:Mahek & Aman - Royal Islamic Wedding Ceremony (Insha Allah Nikah)',
+    'SUMMARY:Mahek & Aman - Wedding Ceremony (Insha Allah Nikah)',
     'DESCRIPTION:Khan & Zarekari Wedding Ceremony.\\nInsha Allah Nikah at 11:30 AM followed by Lunch Reception.\\nVenue: Govind Garden, Opp. Gawli Farm, Bhosari-Alandi Road, Dighi, Pune.',
     'LOCATION:Govind Garden, Opp. Gawli Farm, Bhosari-Alandi Road, Dighi, Pune',
     'STATUS:CONFIRMED',
@@ -566,7 +566,7 @@ window.handleShareOverlayClick = handleShareOverlayClick;
  * @returns {void}
  */
 function shareViaWhatsApp() {
-  const shareText = "Islamic Wedding Invitation\nKhan & Zarekari Families cordially invite you to celebrate the Nikah Ceremony of Mahek & Aman on Sunday, 27th Dec 2026 at Govind Garden, Pune.\n\nView the wedding scroll:\nhttps://mahekweddingcard.vercel.app/";
+  const shareText = "Wedding Invitation\nKhan & Zarekari Families cordially invite you to celebrate the Nikah Ceremony of Mahek & Aman on Sunday, 27th Dec 2026 at Govind Garden, Pune.\n\nView the wedding invitation:\nhttps://mahekweddingcard.vercel.app/";
   const url = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
   window.open(url, '_blank', 'noopener,noreferrer');
 }
